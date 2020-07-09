@@ -1,9 +1,14 @@
 $(document).ready(function(){
   $("body").empty();
   let params = new URLSearchParams(window.location.search);
-  //let pdata = params.get('data');
-  let pdata = "porygon";
+  let pdata = params.get('data');
+  //let pdata = "";
   let pdata8 = pdata.replace(/-/gi,'_');
+
+  let allPokemon=null;
+  let galar=null;
+  let galarMoves=null;
+  let allMoves = null;
 
   var promises = [Promise.resolve()];
   promise1 = new Promise((resolve,reject) => {
@@ -11,8 +16,8 @@ $(document).ready(function(){
       url:'https://pokeapi.co/api/v2/pokemon/?limit=1000',
       dataType:'json',
       success:function(data){
-        const allPokemon = data.results;
-        resolve();
+        allPokemon = data.results;
+        resolve(1);
       }
     });
   });
@@ -21,9 +26,8 @@ $(document).ready(function(){
       url:'https://api.jsonbin.io/b/5ef40ab9e2ce6e3b2c792e97/4',
       dataType:'json',
       success:function(data){
-        console.log("here");
-        const galar = data;
-        resolve();
+        galar = data;
+        resolve(1);
       }
     });
   });
@@ -32,8 +36,8 @@ $(document).ready(function(){
       url:'https://api.jsonbin.io/b/5efea94f0bab551d2b6b08c3/1',
       dataType:'json',
       success:function(data){
-        const galarMoves = data;
-        resolve();
+        galarMoves = data;
+        resolve(1);
       }
     });
   });
@@ -42,81 +46,59 @@ $(document).ready(function(){
       url:'https://pokeapi.co/api/v2/move/?limit=800',
       dataType:'json',
       success:function(data){
-        const allMoves = data.results;
-        resolve();
+        allMoves = data.results;
+        resolve(1);
       }
     });
   });
 
-  function pushPromise(promise){
-    promises.push(promises.pop().then(function(){
-      return promise
-    }));
+  async function displayData(){
+    var promises = [promise1,promise2,promise3,promise4];
+    var unneeded = await Promise.all(promises); //wait for the "databases" to populate
+
+    let thisUrl=null;
+    let apiData=null;
+    thisPokemon = allPokemon.find(element => element.name == pdata);
+    thisMove = allMoves.find(element => element.name == pdata);
+
+    if (galar[pdata8]!=undefined){
+      displayPokemon(galar[pdata8].stats);
+    }else if (thisPokemon!=undefined){
+      thisUrl = thisPokemon.url;
+      var promise6 = new Promise((resolve,reject) => {
+        $.ajax({
+          url:thisUrl,
+          dataType:'json',
+          success:function(data){
+            apiData = data.stats;
+            resolve();
+          }
+        });
+      });
+      await Promise.all([promise6]);
+      displayPokemon(apiData);
+    }else if (galarMoves[pdata8]!=undefined){
+      displayMove(galarMoves[pdata8]);
+    }else if (thisMove!=undefined){
+      thisUrl = thisMove.url;
+      var promise7 = new Promise((resolve,reject) => {
+        $.ajax({
+          url:thisUrl,
+          dataType:'json',
+          success:function(data){
+            apiData = data;
+            resolve();
+          }
+        });
+      });
+      await Promise.all([promise7]);
+      displayMove(apiData);
+    }else{//when people put in bullshit or spell things wrong
+      $('body').text("lol wtf was that");
+    }
   }
 
-  pushPromise(promise1);
-  pushPromise(promise2);
-  pushPromise(promise3);
-  pushPromise(promise4);
-
-
-  // let request = new XMLHttpRequest();
-  // request.open('GET', 'https://pokeapi.co/api/v2/pokemon/?limit=1000');
-  // request.responseType = 'json';
-  // request.send();
-  // request.onload = function(){
-  //   const allPokemon = (request.response).results; //not all pokemon lmao
-  // }
-  //
-  // request = new XMLHttpRequest();
-  // request.open('GET','https://jsonbin.io/5ef40ab9e2ce6e3b2c792e97/4');
-  // request.responseType = 'json';
-  // request.send();
-  // request.onload = function(){
-  //   const galar = request.response; //gen 8 mons + meltan and melmetal
-  // }
-  //
-  // request = new XMLHttpRequest();
-  // request.open('GET','https://jsonbin.io/5efea94f0bab551d2b6b08c3/1');
-  // request.responseType = 'json';
-  // request.send();
-  // request.onload = function(){
-  //   const galarMoves = request.response; //gen 8 moves and updates
-  // }
-  //
-  // request = new XMLHttpRequest();
-  // request.open('GET','https://pokeapi.co/api/v2/move/?limit=800');
-  // request.responseType = 'json';
-  // request.send();
-  // request.onload = function(){
-  //   const allMoves = request.response.results; //also not all moves lol
-  // }
-
-  if (galar.data8!=undefined){
-    displayPokemon(data8.stats);
-  }else if (allPokemon.data!=undefined){
-    const url = allPokemon.find(item => item.name==data).url;
-    request.open('GET', url);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function(){
-      const apiData = (request.response).stats;
-    }
-    displayPokemon(apiData);
-  }else if (galarMoves.data8!=undefined){
-    dislayMove(data8.stats);
-  }else if (allMoves.data!=undefined){
-    const url = allMoves.find(item => item.name==data).url;
-    request.open('GET', url);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function(){
-      const apiData = (request.response);
-    }
-    displayMove(apiData);
-  }else{//when people put in bullshit or spell things wrong
-    $('body').text("WTF was that?");
-  }
+  displayData();
 })
 
 function displayPokemon(pokedata){
