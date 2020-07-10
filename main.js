@@ -90,7 +90,7 @@
       await Promise.all([promise7]);
       return displayMove(apiData);
     }else{//when people put in bullshit or spell things wrong
-      return "lol wtf was that";
+      return ["lol wtf was that"];
     }
   }
 
