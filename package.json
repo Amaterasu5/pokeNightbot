@@ -4,7 +4,10 @@
   "description": "This is meant to be a simple API to fetch certain pokemon data through Nightbot on Twitch.tv.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js",
+    "devstart": "nodemon index.js",
+    "serverstart": "DEBUG=pokenightbot:* npm run devstart"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,8 @@
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "jsdom": "^16.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
