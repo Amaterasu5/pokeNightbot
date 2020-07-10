@@ -13,7 +13,6 @@ const url = require('url');
 
 app.get('/', (req, res) => {
   var searchQuery = req.originalUrl.replace(req.path,'');
-  //searchQuery = searchQuery.charAt(0)=='/'? searchQuery.substring(1) : searchQuery;
   let params = new URLSearchParams(searchQuery);
   let pdata = params.get('data').toLowerCase();
   let pdata8 = pdata.replace(/-/gi,'_');
@@ -26,9 +25,12 @@ app.get('/', (req, res) => {
 app.get('/learn',(req,res) => {
   var searchQuery = req.originalUrl.replace(req.path,'');
   let params = new URLSearchParams(searchQuery);
-  let pokemon = params.get('pokemon').toLowerCase().replace(/-/gi,'');
-  let move = params.get('move').toLowerCase().replace(/-/gi,'');
-  const canLearn = learnFunction.doesItLearn(pokemon,move);
+  let pokemon = params.get('pokemon').toLowerCase();
+  let ppokemon = pokemon.replace(/-/gi,'');
+  let move = params.get('move').toLowerCase();
+  let pmove = move.replace(/-/gi,'');
+  move = move.replace(/-/gi,' ');
+  const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
   if (canLearn){
     res.send("Yes, "+pokemon+" can learn "+move+" in galar.");
   }else{
