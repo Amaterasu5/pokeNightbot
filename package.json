@@ -20,12 +20,15 @@
   },
   "homepage": "https://github.com/Amaterasu5/pokeNightbot#readme",
   "dependencies": {
+    "@types/node": "^14.0.20",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "jsdom": "^16.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
   }
 }

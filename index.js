@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mainFunctions = require('./main.js');
+const learnFunction = require('./learn.ts');
 const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
@@ -11,8 +12,8 @@ app.use(cookieParser());
 const url = require('url');
 
 app.get('/', (req, res) => {
-  var searchQuery = req.originalUrl;
-  searchQuery = searchQuery.charAt(0)=='/'? searchQuery.substring(1) : searchQuery;
+  var searchQuery = req.originalUrl.replace(req.path,'');
+  //searchQuery = searchQuery.charAt(0)=='/'? searchQuery.substring(1) : searchQuery;
   let params = new URLSearchParams(searchQuery);
   let pdata = params.get('data').toLowerCase();
   let pdata8 = pdata.replace(/-/gi,'_');
@@ -20,6 +21,19 @@ app.get('/', (req, res) => {
     let info = await mainFunctions.displayData(pdata,pdata8);
     res.send(info);
   })();
+});
+
+app.get('/learn',(req,res) => {
+  var searchQuery = req.originalUrl.replace(req.path,'');
+  let params = new URLSearchParams(searchQuery);
+  let pokemon = params.get('pokemon').toLowerCase().replace(/-/gi,'');
+  let move = params.get('move').toLowerCase().replace(/-/gi,'');
+  const canLearn = learnFunction.doesItLearn(pokemon,move);
+  if (canLearn){
+    res.send("Yes, "+pokemon+" can learn "+move+" in galar.");
+  }else{
+    res.send("No, "+pokemon+" can't learn "+move+" in galar.");
+  }
 });
 
 app.listen(process.env.PORT||5000);
