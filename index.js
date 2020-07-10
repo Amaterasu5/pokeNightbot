@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   var searchQuery = req.originalUrl;
   searchQuery = searchQuery.charAt(0)=='/'? searchQuery.substring(1) : searchQuery;
   let params = new URLSearchParams(searchQuery);
-  let pdata = params.get('data');
+  let pdata = params.get('data').toLowerCase();
   let pdata8 = pdata.replace(/-/gi,'_');
   (async function(){
     let info = await mainFunctions.displayData(pdata,pdata8);
