@@ -29,12 +29,17 @@ app.get('/learn',(req,res) => {
   let ppokemon = pokemon.replace(/-/gi,'');
   let move = params.get('move').toLowerCase();
   let pmove = move.replace(/-/gi,'');
-  move = move.replace(/-/gi,' ');
-  const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
-  if (canLearn){
-    res.send("Yes, "+pokemon+" can learn "+move+" in galar.");
+  const existence = learnFunction.doesPokemonMoveExist(pokemon,move);
+  if (!existence){
+    res.send("lol wtf was that?");
   }else{
-    res.send("No, "+pokemon+" can't learn "+move+" in galar.");
+    move = move.replace(/-/gi,' ');
+    const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
+    if (canLearn){
+      res.send("Yes, "+pokemon+" can learn "+move+" in galar.");
+    }else{
+      res.send("No, "+pokemon+" can't learn "+move+" in galar.");
+    }
   }
 });
 
