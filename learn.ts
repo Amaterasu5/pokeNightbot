@@ -19,7 +19,8 @@ methods.doesItLearn = function(pokemon, move){
 methods.doesPokemonMoveExist = function(pokemon, move){
   const pokemonExists = learnsets[pokemon]!=undefined? true : false;
   let thisMove = allMoves.find(element => element.name == move);
-  const moveExists = !(thisMove==undefined&&galarMoves[move]==undefined);
+  let underMove = move.replace(/-/gi,'_');
+  const moveExists = !(thisMove==undefined&&galarMoves[underMove]==undefined);
   return (pokemonExists && moveExists);
 }
 
