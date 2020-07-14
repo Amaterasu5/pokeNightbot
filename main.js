@@ -50,7 +50,7 @@ methods.displayData = async function(pdata,pdata8){
     await Promise.all([promise2]);
     return displayMove(apiData);
   }else if (galarAbilities[pdata8]!=undefined){
-    return displayAbility(galarAbilities[pdata8]);
+    return displayAbility(galarAbilities[pdata8],0);
   }else if (thisAbility!=undefined){
     thisUrl = thisAbility.url;
     var promise3 = new Promise((resolve,reject) => {
@@ -64,7 +64,7 @@ methods.displayData = async function(pdata,pdata8){
       });
     });
     await Promise.all([promise3]);
-    return displayAbility(apiData);
+    return displayAbility(apiData,undefined);
   }else{//when people put in bullshit or spell things wrong
     return ["lol wtf was that"];
   }
@@ -84,9 +84,11 @@ function displayMove(movedata){
    return items;
 }
 
-function displayAbility(abdata){
+function displayAbility(abdata,index){
   items=[];
-  index = abdata.generation.name=='generation-vii'||abdata.generation.name=='generation-viii'? 0:1;
+  if (index==undefined){
+    index = abdata.generation.name=='generation-vii'? 0:1;
+  }
   items.push('Original generation: '+abdata.generation.name+', '+abdata.effect_entries[index].short_effect);
   return items;
 }

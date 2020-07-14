@@ -78,5 +78,68 @@
   "effect_entries":[{"short_effect":"Contact moves used by a pokemon with this ability ignore protect moves."}]},
 "wandering_spirit":{
   "generation":{"name":"generation-viii"},
-  "effect_entries":[{"short_effect":"When a pokemon makes contact with a pokemon with this ability, their abilities are swapped and may reactivate."}]}
+  "effect_entries":[{"short_effect":"When a pokemon makes contact with a pokemon with this ability, their abilities are swapped and may reactivate."}]},
+"drizzle":{
+  "generation":{"name":"generation-iii"},
+  "effect_entries":[{"short_effect":"The pokemon makes it rain for 5 turns when it enters battle."}]},
+"drought":{
+  "generation":{"name":"generation-iii"},
+  "effect_entries":[{"short_effect":"Turns the sunlight harsh for 5 turns when the Pokemon enters a battle."}]},
+"infiltrator":{
+  "generation":{"name":"generation-v"},
+  "effect_entries":[{"short_effect":"Ignores Reflect, Light Screen, Safeguard, and Substitute when attacking an opponent."}]},
+"keen_eye":{
+  "generation":{"name":"generation-iii"},
+  "effect_entries":[{"short_effect":"Accuracy cannot be reduced and opponent's evasion boosts are ignored."}]},
+"oblivious":{
+  "generation":{"name":"generation-iii"},
+  "effect_entries":[{"short_effect":"Prevents Taunt, infatuation and Intimidate."}]},
+"overcoat":{
+  "generation":{"name":"generation-v"},
+  "effect_entries":[{"short_effect":"Protects from weather damage and powder moves."}]},
+"sand_stream":{
+  "generation":{"name":"generation-iii"},
+  "effect_entries":[{"short_effect":"When the pokemon enters battle, sandstorm is summoned for 5 turns."}]},
+"snow_warning":{
+  "generation":{"name":"generation-iv"},
+  "effect_entries":[{"short_effect":"When the pokemon enters battle, hail is summoned for 5 turns."}]},
+"aerilate":{
+  "generation":{"name":"generation-vi"},
+  "effect_entries":[{"short_effect":"Normal-type moves become Flying-type and are boosted by 1.2x."}]},
+"pixilate":{
+  "generation":{"name":"generation-vi"},
+  "effect_entries":[{"short_effect":"Normal-type moves become Fairy-type and are boosted by 1.2x."}]},
+"refrigerate":{
+  "generation":{"name":"generation-vi"},
+  "effect_entries":[{"short_effect":"Normal-type moves become Ice-type and are boosted by 1.2x."}]},
+"parental_bond":{
+  "generation":{"name":"generation-vi"},
+  "effect_entries":[{"short_effect":"Every move used by the Pokemon will hit twice. The second move does 25% of the first."}]},
+"prankster":{
+  "generation":{"name":"generation-v"},
+  "effect_entries":[{"short_effect":"Status moves have their priority increased by 1. These moves fail against opposing Dark-type pokemon."}]},
+"weak_armor":{
+  "generation":{"name":"generation-v"},
+  "effect_entries":[{"short_effect":"Physical attacks to the pokemon lower its Defense stat by 1 stage but raise its Speed stat by 2 stages."}]},
+"gale_wings":{
+  "generation":{"name":"generation-vi"},
+  "effect_entries":[{"short_effect":"Flying type moves used by the pokemon are granted +1 priority when the pokemon is at full health."}]},
+"disguise":{
+  "generation":{"name":"generation-vii"},
+  "effect_entries":[{"short_effect":"Once per battle, the pokemon is protected from the first attack that hits it. 1/8 recoil damage is dealt instead."}]},
+"inner_focus":{
+  "generation":{"name":"generation-iii"},
+  "effect_entries":[{"short_effect":"Prevents flinching (except from Focus Punch) and blocks Intimidate."}]},
+"moody":{
+  "generation":{"name":"generation-v"},
+  "effect_entries":[{"short_effect":"Raises one stat sharply and lowers another by 1 stage every turn. Does not affect evasion or accuracy."}]},
+"own_tempo":{
+  "generation":{"name":"generation-iii"},
+  "effect_entries":[{"short_effect":"Prevents confusion and blocks Intimidate."}]},
+"rattled":{
+  "generation":{"name":"generation-v"},
+  "effect_entries":[{"short_effect":"Intimidate, Dark-, Ghost-, and Bug-type moves raise the Pokemon's speed stat by 1 stage."}]},
+"scrappy":{
+  "generation":{"name":"generation-iv"},
+  "effect_entries":[{"short_effect":"Allows the pokemon to hit Ghost-type pokemon with Normal- and Fighting-type moves, and blocks Intimidate."}]}
 }
