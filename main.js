@@ -5,6 +5,8 @@ const allPokemon = require('./allPokemon.json').results;
 const galar = require('./pokemonGen8.json');
 const galarMoves = require('./gen8moves.json');
 const allMoves = require('./allMoves.json').results;
+const allAbilities = require('./allAbilities.json').results;
+const galarAbilities = require('./galarAbilities.json');
 
 
 var methods = {};
@@ -13,6 +15,7 @@ methods.displayData = async function(pdata,pdata8){
   let apiData=null;
   thisPokemon = allPokemon.find(element => element.name == pdata);
   thisMove = allMoves.find(element => element.name == pdata);
+  thisAbility = allAbilities.find(element => element.name == pdata);
 
   if (galar[pdata8]!=undefined){
     return displayPokemon(galar[pdata8].stats);
@@ -46,6 +49,22 @@ methods.displayData = async function(pdata,pdata8){
     });
     await Promise.all([promise2]);
     return displayMove(apiData);
+  }else if (galarAbilities[pdata8]!=undefined){
+    return displayAbility(galarAbilities[pdata8],0);
+  }else if (thisAbility!=undefined){
+    thisUrl = thisAbility.url;
+    var promise3 = new Promise((resolve,reject) => {
+      $.ajax({
+        url:thisUrl,
+        dataType:'json',
+        success:function(data){
+          apiData = data;
+          resolve();
+        }
+      });
+    });
+    await Promise.all([promise3]);
+    return displayAbility(apiData,1);
   }else{//when people put in bullshit or spell things wrong
     return ["lol wtf was that"];
   }
@@ -63,6 +82,12 @@ function displayMove(movedata){
    items=[];
    items.push('Type: '+movedata.type.name+', Power: '+movedata.power+', Accuracy: '+movedata.accuracy+', Priority: '+ movedata.priority+ ', Max PP: '+parseInt(movedata.pp,10)*(8.0/5)+', Damage type: '+movedata.damage_class.name+ ', '+movedata.effect_entries[0].short_effect);
    return items;
+}
+
+function displayAbility(abdata,index){
+  items=[];
+  items.push('Original generation: '+abdata.generation.name+', '+abdata.effect_entries[index].short_effect);
+  return items;
 }
 
 module.exports = methods;

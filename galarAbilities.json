@@ -1,0 +1,82 @@
+{"ball_fetch":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"If the first PokeBall thrown fails to catch the pokemon, a pokemon with this ability will pick up the same type of ball at the end of the turn."}]},
+"cotton_down":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"If a pokemon with this ability is attacked, all other pokemon on the field have their speed reduced by one stage."}]},
+"dauntless_shield":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"When a pokemon with this ability enters battle, their defense stat raises by one stage."}]},
+"gorilla_tactics":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability gains a 1.5x boost to their attack, but can only select one move."}]},
+"gulp_missile":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"If a pokemon with this ability uses dive or surf, they gain a projectile which is launched at the opponent upon being damaged. This projectile does 25% damage and either reduces defense or paralyzes the opponent."}]},
+"hunger_switch":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"After each turn, a pokemon with this ability will change between full-belly and hangry formes."}]},
+"ice_face":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"If a pokemon with this ability is hit by a physical attack while ice face is active, they will take no damage and the ice face will break."}]},
+"ice_scales":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability takes half damage from special attackss."}]},
+"intrepid_sword":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"When a pokemon with this ability enters battle, their attack stat increases by one stage."}]},
+"libero":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability changes type to match whatever attack they're about to use."}]},
+"mimicry":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability changes type to match whatever terrain is currently active on the field, if there is one."}]},
+"mirror_armor":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"If a pokemon with this ability were to have a stat lowered due to the effect of another pokemon, that decrease is reflected back at that pokemon."}]},
+"neutralizing_gas":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"When a pokemon with this ability enters battle, all other abilities are suppressed (except for Stance Change, Schooling, and Neutralizing Gas)."}]},
+"pastel_veil":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"Heals and prevents user and all allies from poison."}]},
+"perish_body":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"If contact is made with a pokemon with this ability,  the Pokémon and the attacker will faint after three turns unless they switch out of battle."}]},
+"power_spot":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability grants its allies a 1.3x damage boost."}]},
+"propeller_tail":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability ignores moves and abilities that draw in or redirect attacks."}]},
+"punk_rock":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability has its sound-based attacks increased by 1.3x and takes half damage from sound-based attacks."}]},
+"quick_draw":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability has a 30% chance to move first in its priority bracket. Stacks with Quick Claw."}]},
+"ripen":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"Doubles the effect of berries consumed."}]},
+"sand_spit":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"When a pokemon with this ability is attacked and sandstorm is not active, sandstorm starts for 5 turns."}]},
+"screen_cleaner":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"When a pokemon with this ability switches in to battle, all screens are removed from both sides of the field."}]},
+"stalwart":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A pokemon with this ability ignores moves and abilites that draw in or redirect attacks."}]},
+"steam_engine":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"If a pokemon with this ability is hit by a water or fire type move, their speed stat is maxed out."}]},
+"steely_spirit":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"Steel-type moves used by a Pokémon with this ability and its allies will receive a power boost of 50%."}]},
+"unseen_fist":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"Contact moves used by a pokemon with this ability ignore protect moves."}]},
+"wandering_spirit":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"When a pokemon makes contact with a pokemon with this ability, their abilities are swapped and may reactivate."}]}
+}
