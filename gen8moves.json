@@ -933,5 +933,21 @@
 "pp":5,
 "damage_class":{"name":"physical"},
 "effect_entries":[{"short_effect":"Inflicts damage to the target twice. May cause the opponent to flinch (51%)"}],
-"type":{"name":"steel"}}
+"type":{"name":"steel"}},
+"conversion_2":{
+"power":null,
+"accuracy":null,
+"priority":0,
+"pp":30,
+"damage_class":{"name":"status"},
+"effect_entries":[{"short_effect":"Changes the user's type to a random type that resists or is immune to the last move used by the target."}],
+"type":{"name":"normal"}},
+"conversion":{
+"power":null,
+"accuracy":null,
+"priority":0,
+"pp":30,
+"damage_class":{"name":"status"},
+"effect_entries":[{"short_effect":"Changes the user's type to match the type of the move in their first slot."}],
+"type":{"name":"normal"}}
 }
