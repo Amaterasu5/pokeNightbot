@@ -11,8 +11,10 @@ methods.doesItLearn = function(pokemon, move){
   const checkBaby = learnsets[pokemon].baby;
   if (checkBaby!=undefined){
     const babyLearnedGens = learnsets[checkBaby].learnset[move];
-    if(babyLearnedGens[0].charAt(0)=='8'&&babyLearnedGens[0].charAt(1)!='V'){
-      return true;
+    if(babyLearnedGens!=undefined){
+      if(babyLearnedGens[0].charAt(0)=='8'&&babyLearnedGens[0].charAt(1)!='V'){
+        return true;
+      }
     }
   }
   const learnedGens = learnsets[pokemon].learnset[move];
