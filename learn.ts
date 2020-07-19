@@ -30,7 +30,7 @@ methods.doesPokemonMoveExist = function(pokemon, move){
   let thisMove = allMoves.find(element => element.name == move);
   let underMove = move.replace(/-/gi,'_');
   const moveExists = !(thisMove==undefined&&galarMoves[underMove]==undefined);
-  return (pokemonExists && moveExists);
+  return pokemonExists && moveExists;
 }
 
 module.exports = methods;

@@ -30,10 +30,20 @@ app.get('/learn',(req,res) => {
   let move = params.get('move').toLowerCase();
   let pmove = move.replace(/-/gi,'');
   const existence = learnFunction.doesPokemonMoveExist(ppokemon,move);
-  if (!existence){
+  const rexistence = learnFunction.doesPokemonMoveExist(pmove,pokemon);
+  if (!(existence||rexistence)){
     res.send("lol wtf was that?");
   }else{
-    move = move.replace(/-/gi,' ');
+    if(rexistence){
+      let temp = move;
+      move = pokemon.replace(/-/gi,' ');
+      pokemon = temp;
+      temp = ppokemon;
+      ppokemon = pmove;
+      pmove = temp;
+    }else{
+      move = move.replace(/-/gi,' ');
+    }
     const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
     if (canLearn){
       res.send("Yes, "+pokemon+" can learn "+move+" in galar.");
