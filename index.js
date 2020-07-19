@@ -29,7 +29,7 @@ app.get('/learn',(req,res) => {
   let ppokemon = pokemon.replace(/-/gi,'');
   let move = params.get('move').toLowerCase();
   let pmove = move.replace(/-/gi,'');
-  const existence = learnFunction.doesPokemonMoveExist(pokemon,move);
+  const existence = learnFunction.doesPokemonMoveExist(ppokemon,move);
   if (!existence){
     res.send("lol wtf was that?");
   }else{
