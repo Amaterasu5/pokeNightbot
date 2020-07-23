@@ -8,7 +8,7 @@ const allMoves = require('./allMoves.json').results;
 const allAbilities = require('./allAbilities.json').results;
 const galarAbilities = require('./galarAbilities.json');
 const allItems = require('./allitems.json').results;
-
+const galarItems = require('./galarItems.json');
 
 var methods = {};
 methods.displayData = async function(pdata,pdata8){
@@ -67,6 +67,8 @@ methods.displayData = async function(pdata,pdata8){
     });
     await Promise.all([promise3]);
     return displayAbility(apiData,undefined);
+  }else if(galarItems[pdata8]!=undefined){
+    return displayItem(galarItems[pdata8]);
   }else if (thisItem!=undefined){
     thisUrl=thisItem.url;
     var promise4 = new Promise((resolve,reject) => {

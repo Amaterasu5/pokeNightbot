@@ -1,0 +1,213 @@
+{"aguav_berry":{
+  "effect_entries":[{"short_effect":"Boosts health by 33% when Pokemon's health drops below 25%."}]},
+"figy_berry":{
+  "effect_entries":[{"short_effect":"Boosts health by 33% when Pokemon's health drops below 25%."}]},
+"iapapa_berry":{
+  "effect_entries":[{"short_effect":"Boosts health by 33% when Pokemon's health drops below 25%."}]},
+"mago_berry":{
+  "effect_entries":[{"short_effect":"Boosts health by 33% when Pokemon's health drops below 25%."}]},
+"wiki_berry":{
+  "effect_entries":[{"short_effect":"Boosts health by 33% when Pokemon's health drops below 25%."}]},
+"dream_ball":{
+  "effect_entries":[{"short_effect":"Capture chance is increased by 3x if the pokemon is asleep."}]},
+"adamant_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +attack and -special attack."}]},
+"bold_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +defense and -attack."}]},
+"brave_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +attack and -speed."}]},
+"calm_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special defense and -attack."}]},
+"careful_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special defense and -special attack."}]},
+"gentle_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special defense and -defense."}]},
+"hasty_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +speed and -defense."}]},
+"impish_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +defense and -special attack."}]},
+"jolly_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +speed and -special attack."}]},
+"lax_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +defense and -special defense."}]},
+"lonely_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +attack and -defense."}]},
+"mild_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special attack and -defense."}]},
+"modest_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special attack and -attack."}]},
+"naive_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +speed and -special defense."}]},
+"naughty_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +attack and -special defense."}]},
+"quiet_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special attack and -speed."}]},
+"rash_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special attack and -special defense."}]},
+"relaxed_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +defense and -speed."}]},
+"sassy_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +special defense and -speed."}]},
+"serious_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's stats to all grow at the same rate."}]},
+"timid_mint":{
+  "effect_entries":[{"short_effect":"Causes a pokemon's nature to be +speed and -attack."}]},
+"bachs_food_tin":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"bobs_food_tin":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"boiled_egg":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"bread":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"brittle_bones":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"coconut_milk":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"fancy_apple":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"fresh_cream":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"fried_food":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"fruit_bunch":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"gigantamix":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"instant_noodles":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"large_leek":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"mixed_mushrooms":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"moomoo_cheese":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"pack_of_potatoes":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"packaged_curry":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"pasta":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"precooked_burger":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"pungent_root":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"salad_mix":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"sausages":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"smoke_poke_tail":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"spice_mix":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"tin_of_beans":{
+  "effect_entries":[{"short_effect":"Food for making curry. Does nothing."}]},
+"band_autograph":{
+  "effect_entries":[{"short_effect":"Autograph of the band, the Maximizers."}]},
+"berry_sweet":{
+  "effect_entries":[{"short_effect":"A berry-shaped sweet to evolve milcery."}]},
+"blunder_policy":{
+  "effect_entries":[{"short_effect":"Raises speed by 2 stages when a Pokemon misses a move due to accuracy."}]},
+"camping_gear":{
+  "effect_entries":[{"short_effect":"Everything needed to set up a tent and cook in the wild area or at a camping spot."}]},
+"catching_charm":{
+  "effect_entries":[{"short_effect":"Increases the chance of a critical capture."}]},
+"chipped_pot":{
+  "effect_entries":[{"short_effect":"Item that makes authentic sinistea evolve."}]},
+"clover_sweet":{
+  "effect_entries":[{"short_effect":"A clover-shaped sweet to evolve milcery."}]},
+"cracked_pot":{
+  "effect_entries":[{"short_effect":"Item that makes phony sinistea evolve."}]},
+"dynamax_band":{
+  "effect_entries":[{"short_effect":"Allows Pokemon to dynamax at a Power Spot."}]},
+"dynamax_candy":{
+  "effect_entries":[{"short_effect":"A candy that raises a Pokemon's dynamax level by 1."}]},
+"eject_pack":{
+  "effect_entries":[{"short_effect":"Switches the holder out of battle when their stats are reduced."}]},
+"endorsement":{
+  "effect_entries":[{"short_effect":"A letter of recommendation to participate in the Gym Challenge."}]},
+"exp_candy_xs":{
+  "effect_entries":[{"short_effect":"A candy that gives a Pokemon 100 exp."}]},
+"exp_candy_s":{
+  "effect_entries":[{"short_effect":"A candy that gives a Pokemon 800 exp."}]},
+"exp_candy_m":{
+  "effect_entries":[{"short_effect":"A candy that gives a Pokemon 3000 exp."}]},
+"exp_candy_l":{
+  "effect_entries":[{"short_effect":"A candy that gives a Pokemon 10000 exp."}]},
+"exp_candy_xl":{
+  "effect_entries":[{"short_effect":"A candy that gives a Pokemon 30000 exp."}]},
+"fishing_rod":{
+  "effect_entries":[{"short_effect":"Use by the water to fish up various kinds of Pokemon."}]},
+"flower_sweet":{
+  "effect_entries":[{"short_effect":"A flower-shaped sweet to evolve milcery."}]},
+"fossilized_bird":{
+  "effect_entries":[{"short_effect":"The fossil of an ancient Pokemon that once soared through the sky."}]},
+"fossilized_dino":{
+  "effect_entries":[{"short_effect":"The fossil of an ancient Pokemon that once lived in the sea."}]},
+"fossilized_drake":{
+  "effect_entries":[{"short_effect":"The fossil of an ancient Pokemon that once roamed the land."}]},
+"fossilized_fish":{
+  "effect_entries":[{"short_effect":"the fossil of an ancient Pokemon that once lived in the sea."}]},
+"heavy_duty_boots":{
+  "effect_entries":[{"short_effect":"Prevent the effect of hazards set on the battlefield."}]},
+"hi_tech_earbuds":{
+  "effect_entries":[{"short_effect":"Strange earbuds that allow you to freely control the volume of various sounds."}]},
+"love_sweet":{
+  "effect_entries":[{"short_effect":"A heart-shaped sweet to evolve milcery."}]},
+"old_letter":{
+  "effect_entries":[{"short_effect":"A letter entrusted to you by a girl, to be delivered to a boy."}]},
+"pokemon_box_link":{
+  "effect_entries":[{"short_effect":"A device that allows you to access the Pokemon storage system remotely."}]},
+"ribbon_sweet":{
+  "effect_entries":[{"short_effect":"A ribbon-shaped sweet to evolve milcery."}]},
+"room_service":{
+  "effect_entries":[{"short_effect":"Lowers speed by one stage when Trick Room becomes active."}]},
+"rotom_bike":{
+  "effect_entries":[{"short_effect":"This bike can turbo boost and run on water."}]},
+"rotom_catalog":{
+  "effect_entries":[{"short_effect":"Allows rotom to change form."}]},
+"rusted_shield":{
+  "effect_entries":[{"short_effect":"Transforms Zamazenta into Zamazenta-Crowned forme."}]},
+"rusted_sword":{
+  "effect_entries":[{"short_effect":"Transforms Zacian into Zacian-Crowned forme."}]},
+"sonias_book":{
+  "effect_entries":[{"short_effect":"Professor Sonia's writings about the legend of Galar."}]},
+"star_sweet":{
+  "effect_entries":[{"short_effect":"A star-shaped sweet to evolve milcery."}]},
+"strawberry_sweet":{
+  "effect_entries":[{"short_effect":"A strawberry-shaped sweet to evolve milcery."}]},
+"sweet_apple":{
+  "effect_entries":[{"short_effect":"A sweet apple to evolve Applin into Appletun."}]},
+"tart_apple":{
+  "effect_entries":[{"short_effect":"A tart apple to evolve Applin into Flapple."}]},
+"throat_spray":{
+  "effect_entries":[{"short_effect":"Raises special attack by one stage when a Pokemon uses a sound-based move."}]},
+"utility_umbrella":{
+  "effect_entries":[{"short_effect":"An item that protects the holder from the effects of weather."}]},
+"wishing_piece":{
+  "effect_entries":[{"short_effect":"Tossing one into a Pokemon Den will spawn a Max Raid."}]},
+"wishing_star":{
+  "effect_entries":[{"short_effect":"A stone that can be transformed into a Dynamax Band."}]},
+"max_honey":{
+  "effect_entries":[{"short_effect":"Honey that makes Max Soup taste smooth. In battle, acts as a Max Revive."}]},
+"max_mushrooms":{
+  "effect_entries":[{"short_effect":"Mushrooms needed for Max Soup. In battle they boost all stats of a Pokemon by one stage."}]},
+"galarica_twig":{
+  "effect_entries":[{"short_effect":"A twig from trees in the Isle of Armor."}]},
+"galarica_cuff":{
+  "effect_entries":[{"short_effect":"A cuff woven from Galarica Twigs that evolves Slowpoke-Galar into Slowbro-Galar."}]},
+"style_card":{
+  "effect_entries":[{"short_effect":"Increases selection in boutiques and hair salons."}]},
+"armor_pass":{
+  "effect_entries":[{"short_effect":"The pass that allows passage to the Isle of Armor."}]},
+"rotom_bike_white":{
+  "effect_entries":[{"short_effect":"Rotom bike that leaves a sparkling white trail."}]},
+"rotom_bike_black":{
+  "effect_entries":[{"short_effect":"Rotom bike that leaves a glistening black trail."}]},
+"exp_charm":{
+  "effect_entries":[{"short_effect":"Increases the exp that Pokemon can get."}]},
+"armorite_ore":{
+  "effect_entries":[{"short_effect":"Rare ore obtained on the Isle of Armor that can be used in many ways."}]},
+"mark_charm":{
+  "effect_entries":[{"short_effect":"A charm that increases the chance of finding a Pokemon with a mark."}]}
+}
