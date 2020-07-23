@@ -7,6 +7,7 @@ const galarMoves = require('./gen8moves.json');
 const allMoves = require('./allMoves.json').results;
 const allAbilities = require('./allAbilities.json').results;
 const galarAbilities = require('./galarAbilities.json');
+const allItems = require('./allitems.json').results;
 
 
 var methods = {};
@@ -16,6 +17,7 @@ methods.displayData = async function(pdata,pdata8){
   thisPokemon = allPokemon.find(element => element.name == pdata);
   thisMove = allMoves.find(element => element.name == pdata);
   thisAbility = allAbilities.find(element => element.name == pdata);
+  thisItem = allItems.find(element => element.name == pdata);
 
   if (galar[pdata8]!=undefined){
     return displayPokemon(galar[pdata8].stats);
@@ -65,6 +67,20 @@ methods.displayData = async function(pdata,pdata8){
     });
     await Promise.all([promise3]);
     return displayAbility(apiData,undefined);
+  }else if (thisItem!=undefined){
+    thisUrl=thisItem.url;
+    var promise4 = new Promise((resolve,reject) => {
+      $.ajax({
+        url:thisUrl,
+        dataType:'json',
+        success:function(data){
+          apiData = data;
+          resolve();
+        }
+      });
+    });
+    await Promise.all([promise4]);
+    return displayItem(apiData);
   }else{//when people put in bullshit or spell things wrong
     return ["lol wtf was that"];
   }
@@ -90,6 +106,12 @@ function displayAbility(abdata,index){
     index = abdata.generation.name=='generation-vii'? 0:1;
   }
   items.push('Original generation: '+abdata.generation.name+', '+abdata.effect_entries[index].short_effect);
+  return items;
+}
+
+function displayItem(itemdata){
+  items=[];
+  items.push(itemdata.effect_entries[0].short_effect);
   return items;
 }
 
