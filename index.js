@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   (async function(){
     const [fixed,finalP,info] = await mainFunctions.displayData(pdata,pdata8);
     if(fixed){
-      res.send("Did you mean "+finalP+"? " + info);
+      res.send(["Did you mean "+finalP+"? " + info]);
     }else{
       res.send(info);
     }
