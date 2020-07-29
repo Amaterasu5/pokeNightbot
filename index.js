@@ -17,8 +17,12 @@ app.get('/', (req, res) => {
   let pdata = params.get('data').toLowerCase();
   let pdata8 = pdata.replace(/-/gi,'_');
   (async function(){
-    let info = await mainFunctions.displayData(pdata,pdata8);
-    res.send(info);
+    const [fixed,finalP,info] = await mainFunctions.displayData(pdata,pdata8);
+    if(fixed){
+      res.send("Did you mean "+finalP+"? " + info);
+    }else{
+      res.send(info);
+    }
   })();
 });
 

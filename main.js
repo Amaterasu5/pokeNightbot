@@ -11,7 +11,7 @@ const allItems = require('./allitems.json').results;
 const galarItems = require('./galarItems.json');
 
 var methods = {};
-methods.displayData = async function(pdata,pdata8){
+methods.displayData = async function(pdata,pdata8, fixed=false){
   let thisUrl=null;
   let apiData=null;
   thisPokemon = allPokemon.find(element => element.name == pdata);
@@ -20,7 +20,7 @@ methods.displayData = async function(pdata,pdata8){
   thisItem = allItems.find(element => element.name == pdata);
 
   if (galar[pdata8]!=undefined){
-    return displayPokemon(galar[pdata8].stats);
+    return [fixed,pdata8,displayPokemon(galar[pdata8].stats)];
   }else if (thisPokemon!=undefined){
     thisUrl = thisPokemon.url;
     var promise1 = new Promise((resolve,reject) => {
@@ -34,9 +34,9 @@ methods.displayData = async function(pdata,pdata8){
       });
     });
     await Promise.all([promise1]);
-    return displayPokemon(apiData);
+    return [fixed,pdata,displayPokemon(apiData)];
   }else if (galarMoves[pdata8]!=undefined){
-    return displayMove(galarMoves[pdata8]);
+    return [fixed,pdata8,displayMove(galarMoves[pdata8])];
   }else if (thisMove!=undefined){
     thisUrl = thisMove.url;
     var promise2 = new Promise((resolve,reject) => {
@@ -50,9 +50,9 @@ methods.displayData = async function(pdata,pdata8){
       });
     });
     await Promise.all([promise2]);
-    return displayMove(apiData);
+    return [fixed,pdata,displayMove(apiData)];
   }else if (galarAbilities[pdata8]!=undefined){
-    return displayAbility(galarAbilities[pdata8],0);
+    return [fixed,pdata8,displayAbility(galarAbilities[pdata8],0)];
   }else if (thisAbility!=undefined){
     thisUrl = thisAbility.url;
     var promise3 = new Promise((resolve,reject) => {
@@ -66,9 +66,9 @@ methods.displayData = async function(pdata,pdata8){
       });
     });
     await Promise.all([promise3]);
-    return displayAbility(apiData,undefined);
+    return [fixed,pdata,displayAbility(apiData,undefined)];
   }else if(galarItems[pdata8]!=undefined){
-    return displayItem(galarItems[pdata8]);
+    return [fixed,pdata8,displayItem(galarItems[pdata8])];
   }else if (thisItem!=undefined){
     thisUrl=thisItem.url;
     var promise4 = new Promise((resolve,reject) => {
@@ -82,9 +82,62 @@ methods.displayData = async function(pdata,pdata8){
       });
     });
     await Promise.all([promise4]);
-    return displayItem(apiData);
+    return [fixed,pdata,displayItem(apiData)];
   }else{//when people put in bullshit or spell things wrong
-    return ["lol wtf was that"];
+    let pseudo = null;
+    for(item of allPokemon){
+      if (editDistance(pdata,item.name)<2){
+        pseudo = item.name;
+        break;
+      }
+    }
+    for(item in galar){
+      if (editDistance(pdata8,item)<2){
+        pseudo = item;
+        break;
+      }
+    }
+    for(item of allMoves){
+      if (editDistance(pdata,item.name)<2){
+        pseudo = item.name;
+        break;
+      }
+    }
+    for(item in galarMoves){
+      if (editDistance(pdata8,item)<2){
+        pseudo = item;
+        break;
+      }
+    }
+    for(item of allAbilities){
+      if (editDistance(pdata,item.name)<2){
+        pseudo = item.name;
+        break;
+      }
+    }
+    for(item in galarAbilities){
+      if (editDistance(pdata8,item)<2){
+        pseudo = item;
+        break;
+      }
+    }
+    for(item of allItems){
+      if (editDistance(pdata,item.name)<2){
+        pseudo = item.name;
+        break;
+      }
+    }
+    for(item in galarItems){
+      if (editDistance(pdata8,item)<2){
+        pseudo = item;
+        break;
+      }
+    }
+    if(pseudo){
+      return methods.displayData(pseudo,pseudo,fixed=true);
+    }else{
+      return ["lol wtf was that"]; //you spelled it too wrong kek
+    }
   }
 }
 
@@ -115,6 +168,30 @@ function displayItem(itemdata){
   items=[];
   items.push(itemdata.effect_entries[0].short_effect);
   return items;
+}
+
+function editDistance(string1, string2){
+  var m = string1.length;
+  var n = string2.length;
+  var memoTable = new Array();
+  for (i=0;i<m;i++){
+    memoTable.push((new Array(n)).fill(-1));
+  }
+  return editRecur(string1, string2, m, n, memoTable);
+}
+
+
+function editRecur(string1, string2, m, n, memoTable){
+  if(m==0) return n;
+  if(n==0) return m;
+  if(memoTable[m-1][n-1]!=-1){
+    return memoTable[m-1][n-1];
+  }
+
+  if(string1[m-1]==string2[n-1]){
+    return memoTable[m-1][n-1] = editRecur(string1,string2,m-1,n-1, memoTable);
+  }
+  return memoTable[m-1][n-1] = 1+ Math.min(editRecur(string1,string2,m-1,n, memoTable),editRecur(string1,string2,m,n-1,memoTable),editRecur(string1,string2,m-1,n-1, memoTable));
 }
 
 module.exports = methods;
