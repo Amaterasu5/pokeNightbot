@@ -39,16 +39,15 @@ app.get('/learn',(req,res) => {
     res.send("lol wtf was that?");
   }else{
     if(rexistence){
-      let temp = move;
-      move = pokemon==rmove? pokemon.replace(/-/gi,' '):rmove;
-      pokemon = temp==rmon?temp:rmon;
-      ppokemon = rmon;
-      pmove = rmove;
+      move = rmove.replace(/-/gi,' ');
+      pokemon = rmon;
+      ppokemon = rmon.replace(/-/gi,'');
+      pmove = rmove.replace(/-/gi,'');
     }else{
-      ppokemon = fmon;
-      pmove = fmove;
-      pokemon = pokemon==fmon?pokemon:fmon;
-      move = move==fmove? move.replace(/-/gi,' '):fmove;
+      move = fmove.replace(/-/gi,' ');
+      pokemon = fmon;
+      ppokemon = fmon.replace(/-/gi,'');
+      pmove = fmove.replace(/-/gi,'');
     }
     const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
     if (canLearn){
