@@ -137,7 +137,7 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
     if(pseudo){
       return methods.displayData(pseudo,pseudo,fixed=true);
     }else{
-      return ["lol wtf was that"]; //you spelled it too wrong kek
+      return [false,null,"lol wtf was that"]; //you spelled it too wrong kek
     }
   }
 }
