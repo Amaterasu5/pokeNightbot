@@ -9,6 +9,7 @@ const allAbilities = require('./allAbilities.json').results;
 const galarAbilities = require('./galarAbilities.json');
 const allItems = require('./allitems.json').results;
 const galarItems = require('./galarItems.json');
+const errorCorrection = require('./error-correction.js');
 
 var methods = {};
 methods.displayData = async function(pdata,pdata8, fixed=false){
@@ -86,49 +87,49 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
   }else{//when people put in bullshit or spell things wrong
     let pseudo = null;
     for(item of allPokemon){
-      if (editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<2){
         pseudo = item.name;
         break;
       }
     }
     for(item in galar){
-      if (editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<2){
         pseudo = item;
         break;
       }
     }
     for(item of allMoves){
-      if (editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<2){
         pseudo = item.name;
         break;
       }
     }
     for(item in galarMoves){
-      if (editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<2){
         pseudo = item;
         break;
       }
     }
     for(item of allAbilities){
-      if (editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<2){
         pseudo = item.name;
         break;
       }
     }
     for(item in galarAbilities){
-      if (editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<2){
         pseudo = item;
         break;
       }
     }
     for(item of allItems){
-      if (editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<2){
         pseudo = item.name;
         break;
       }
     }
     for(item in galarItems){
-      if (editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<2){
         pseudo = item;
         break;
       }
@@ -168,30 +169,6 @@ function displayItem(itemdata){
   items=[];
   items.push(itemdata.effect_entries[0].short_effect);
   return items;
-}
-
-function editDistance(string1, string2){
-  var m = string1.length;
-  var n = string2.length;
-  var memoTable = new Array();
-  for (i=0;i<m;i++){
-    memoTable.push((new Array(n)).fill(-1));
-  }
-  return editRecur(string1, string2, m, n, memoTable);
-}
-
-
-function editRecur(string1, string2, m, n, memoTable){
-  if(m==0) return n;
-  if(n==0) return m;
-  if(memoTable[m-1][n-1]!=-1){
-    return memoTable[m-1][n-1];
-  }
-
-  if(string1[m-1]==string2[n-1]){
-    return memoTable[m-1][n-1] = editRecur(string1,string2,m-1,n-1, memoTable);
-  }
-  return memoTable[m-1][n-1] = 1+ Math.min(editRecur(string1,string2,m-1,n, memoTable),editRecur(string1,string2,m,n-1,memoTable),editRecur(string1,string2,m-1,n-1, memoTable));
 }
 
 module.exports = methods;

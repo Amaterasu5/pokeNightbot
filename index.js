@@ -33,20 +33,22 @@ app.get('/learn',(req,res) => {
   let ppokemon = pokemon.replace(/-/gi,'');
   let move = params.get('move').toLowerCase();
   let pmove = move.replace(/-/gi,'');
-  const existence = learnFunction.doesPokemonMoveExist(ppokemon,move);
-  const rexistence = learnFunction.doesPokemonMoveExist(pmove,pokemon);
+  const [existence,fmon,fmove] = learnFunction.doesPokemonMoveExist(ppokemon,move);
+  const [rexistence,rmon,rmove] = learnFunction.doesPokemonMoveExist(pmove,pokemon);
   if (!(existence||rexistence)){
     res.send("lol wtf was that?");
   }else{
     if(rexistence){
       let temp = move;
-      move = pokemon.replace(/-/gi,' ');
-      pokemon = temp;
-      temp = ppokemon;
-      ppokemon = pmove;
-      pmove = temp;
+      move = pokemon==rmove? pokemon.replace(/-/gi,' '):rmove;
+      pokemon = temp==rmon?temp:rmon;
+      ppokemon = rmon;
+      pmove = rmove;
     }else{
-      move = move.replace(/-/gi,' ');
+      ppokemon = fmon;
+      pmove = fmove;
+      pokemon = pokemon==fmon?pokemon:fmon;
+      move = move==fmove? move.replace(/-/gi,' '):fmove;
     }
     const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
     if (canLearn){

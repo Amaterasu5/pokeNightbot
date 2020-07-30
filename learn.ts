@@ -1,9 +1,9 @@
-const { JSDOM } = require( "jsdom" );
-const { window } = new JSDOM( "" );
-const $ = require( "jquery" )( window );
 const learnsets = require('./learnsets.ts');
+const allPokemon = require('./allPokemon.json').results;
+const galar = require('./pokemonGen8.json');
 const allMoves = require('./allMoves.json').results;
 const galarMoves = require('./gen8moves.json');
+const errorCorrection = require('./error-correction.js');
 
 var methods = {};
 
@@ -26,11 +26,37 @@ methods.doesItLearn = function(pokemon, move){
 }
 
 methods.doesPokemonMoveExist = function(pokemon, move){
-  const pokemonExists = learnsets[pokemon]!=undefined? true : false;
+  let returnPokemon = learnsets[pokemon]!=undefined? pokemon : null;
+  if(!returnPokemon){
+    for (const item of allPokemon){
+      if (errorCorrection.editDistance(pokemon,item.name)<2){
+        returnPokemon = item.name;
+        break;
+      }
+    }for (const item in galar){
+      if(errorCorrection.editDistance(pokemon,item)<2){
+        returnPokemon = item;
+        break;
+      }
+    }
+  }
   let thisMove = allMoves.find(element => element.name == move);
   let underMove = move.replace(/-/gi,'_');
-  const moveExists = !(thisMove==undefined&&galarMoves[underMove]==undefined);
-  return pokemonExists && moveExists;
+  let returnMove = thisMove? thisMove.name:galarMoves[underMove]?underMove:null;
+  if (!returnMove){
+    for (const item of allMoves){
+      if(errorCorrection.editDistance(move,item.name)<2){
+        returnMove = item.name;
+        break;
+      }
+    }for(const item in galarMoves){
+      if(errorCorrection.editDistance(move,item)<2){
+        returnMove = item;
+        break;
+      }
+    }
+  }
+  return [returnPokemon && returnMove,returnPokemon,returnMove];
 }
 
 module.exports = methods;
