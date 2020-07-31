@@ -39,12 +39,12 @@ app.get('/learn',(req,res) => {
     res.send("lol wtf was that?");
   }else{
     if(rexistence){
-      move = rmove.replace(/-/gi,' ');
+      move = rmove.replace(/-/gi,' ').replace(/_/gi,' ');
       pokemon = rmon;
       ppokemon = rmon.replace(/-/gi,'').replace(/_/gi,'');
       pmove = rmove.replace(/-/gi,'').replace(/_/gi,'');
     }else{
-      move = fmove.replace(/-/gi,' ');
+      move = fmove.replace(/-/gi,' ').replace(/_/gi,' ');
       pokemon = fmon;
       ppokemon = fmon.replace(/-/gi,'').replace(/_/gi,'');
       pmove = fmove.replace(/-/gi,'').replace(/_/gi,'');
