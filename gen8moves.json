@@ -766,7 +766,7 @@
 "damage_class":{"name":"special"},
 "effect_entries":[{"short_effect":"Inflicts damage and can poison the target (20%). This move selects between a physical attack (attack->defense) or a special attack (special attack->special defense) and uses whichever would do more damage."}],
 "type":{"name":"poison"}},
-"snap_trap":{
+"skitter_smack":{
 "power":70,
 "accuracy":90,
 "priority":0,
@@ -774,7 +774,7 @@
 "damage_class":{"name":"physical"},
 "effect_entries":[{"short_effect":"Inflicts damage and lowers the target's special attack stat by one stage."}],
 "type":{"name":"bug"}},
-"meteor_assault":{
+"snap_trap":{
 "power":35,
 "accuracy":100,
 "priority":0,
