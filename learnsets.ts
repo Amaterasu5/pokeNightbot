@@ -66031,7 +66031,7 @@ const BattleLearnsets = {
 		},
 	},
 	incineroar: {
-		baby : "liteen",
+		baby : "litten",
 		learnset: {
 			acrobatics: ["8M", "7M"],
 			assurance: ["8M"],
