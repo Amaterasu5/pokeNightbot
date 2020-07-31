@@ -41,13 +41,13 @@ app.get('/learn',(req,res) => {
     if(rexistence){
       move = rmove.replace(/-/gi,' ');
       pokemon = rmon;
-      ppokemon = rmon.replace(/-/gi,'');
-      pmove = rmove.replace(/-/gi,'');
+      ppokemon = rmon.replace(/-/gi,'').replace(/_/gi,'');
+      pmove = rmove.replace(/-/gi,'').replace(/_/gi,'');
     }else{
       move = fmove.replace(/-/gi,' ');
       pokemon = fmon;
-      ppokemon = fmon.replace(/-/gi,'');
-      pmove = fmove.replace(/-/gi,'');
+      ppokemon = fmon.replace(/-/gi,'').replace(/_/gi,'');
+      pmove = fmove.replace(/-/gi,'').replace(/_/gi,'');
     }
     const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
     if (canLearn){

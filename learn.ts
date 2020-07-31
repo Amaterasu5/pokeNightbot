@@ -8,6 +8,7 @@ const errorCorrection = require('./error-correction.js');
 var methods = {};
 
 methods.doesItLearn = function(pokemon, move){
+  console.log(pokemon,move);
   const checkBaby = learnsets[pokemon].baby;
   if (checkBaby!=undefined){
     const babyLearnedGens = learnsets[checkBaby].learnset[move];
