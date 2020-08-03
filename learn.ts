@@ -45,12 +45,12 @@ methods.doesPokemonMoveExist = function(pokemon, move){
   let returnMove = thisMove? thisMove.name:galarMoves[underMove]?underMove:null;
   if (!returnMove){
     for (const item of allMoves){
-      if(errorCorrection.editDistance(move,item.name)<2){
+      if(errorCorrection.editDistance(move,item.name)<3){
         returnMove = item.name;
         break;
       }
     }for(const item in galarMoves){
-      if(errorCorrection.editDistance(move,item)<2){
+      if(errorCorrection.editDistance(move,item)<3){
         returnMove = item;
         break;
       }

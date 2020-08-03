@@ -87,49 +87,49 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
   }else{//when people put in bullshit or spell things wrong
     let pseudo = null;
     for(item of allPokemon){
-      if (errorCorrection.editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<3){
         pseudo = item.name;
         break;
       }
     }
     for(item in galar){
-      if (errorCorrection.editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<3){
         pseudo = item;
         break;
       }
     }
     for(item of allMoves){
-      if (errorCorrection.editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<3){
         pseudo = item.name;
         break;
       }
     }
     for(item in galarMoves){
-      if (errorCorrection.editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<3){
         pseudo = item;
         break;
       }
     }
     for(item of allAbilities){
-      if (errorCorrection.editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<3){
         pseudo = item.name;
         break;
       }
     }
     for(item in galarAbilities){
-      if (errorCorrection.editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<3){
         pseudo = item;
         break;
       }
     }
     for(item of allItems){
-      if (errorCorrection.editDistance(pdata,item.name)<2){
+      if (errorCorrection.editDistance(pdata,item.name)<3){
         pseudo = item.name;
         break;
       }
     }
     for(item in galarItems){
-      if (errorCorrection.editDistance(pdata8,item)<2){
+      if (errorCorrection.editDistance(pdata8,item)<3){
         pseudo = item;
         break;
       }
