@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Amaterasu5/pokeNightbot#readme",
   "dependencies": {
+    "@smogon/calc": "^0.4.4",
     "@types/node": "^14.0.20",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",

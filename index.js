@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mainFunctions = require('./main.js');
 const learnFunction = require('./learn.ts');
+const calculate = require('./calculate.js');
 const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 const app = express();
-app.use(bodyParser.json());
-app.use(cookieParser());
+//app.use(bodyParser.json());
+//app.use(cookieParser());
 const url = require('url');
 
 app.get('/', (req, res) => {
@@ -57,5 +58,63 @@ app.get('/learn',(req,res) => {
     }
   }
 });
+
+app.get('/calc',(req,res) => {
+  var searchQuery = req.originalUrl.replace(req.path,'');
+  let params = new URLSearchParams(searchQuery);
+  //console.log(params);
+  attackerData = params.get('attacker').split(',');
+  attacker = setUpPokemon(attackerData);
+  defenderData = params.get('defender').split(',');
+  defender = setUpPokemon(defenderData);
+  move=params.get('move').replace(/-/,' ');
+  field={};
+  result = calculate.performCalc(attacker,defender,move,field);
+  //console.log(result);
+  if(result){
+    res.send(result);
+  }else{
+    res.send("sorry boss idk");
+  }
+});
+
+function capitalizeItem(string){
+  words=string.split(' ');
+  for(i=0;i<words.length;i++){
+    words[i]=words[i].charAt(0).toUpperCase()+words[i].substring(1);
+  }
+  return words.join(' ');
+}
+
+function setUpPokemon(data){
+  const stats=['hp','atk','def','spa','spd','spe'];
+  let preevs = data.filter(function(e){
+    for (let stat of stats){
+      console.log(e,stat);
+      if (e.includes(stat)){return true;}
+    }
+    return false;
+  });
+  monEvs={};
+  for(let item of preevs){
+    for(let stat of stats){
+      if(item.includes(stat)){
+        monEvs[stat]=item.replace(stat+'=','');
+      }
+    }
+  }
+  console.log(monEvs);
+  item=data.find(element=>element.includes('item='));
+  nature=data.find(element =>element.includes('nature='));
+  boosts=data.find(element=> element.charAt(0)=="+"||element.charAt(0)=='-');
+  pokemon={
+    name:data[0],
+    item:item?capitalizeItem(item.substring(5).replace(/-/gi,' ')):null,
+    nature:nature?nature.substring(7):null,
+    boosts:boosts?boosts.substring(1):null,
+    evs:monEvs
+  };
+  return pokemon;
+}
 
 app.listen(process.env.PORT||5000);
