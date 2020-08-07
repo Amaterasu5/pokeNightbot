@@ -62,7 +62,6 @@ app.get('/learn',(req,res) => {
 app.get('/calc',(req,res) => {
   var searchQuery = req.originalUrl.replace(req.path,'');
   let params = new URLSearchParams(searchQuery);
-  //console.log(params);
   attackerData = params.get('attacker').split(',');
   attacker = setUpPokemon(attackerData);
   defenderData = params.get('defender').split(',');
@@ -70,7 +69,6 @@ app.get('/calc',(req,res) => {
   move=params.get('move').replace(/-/,' ');
   field={};
   result = calculate.performCalc(attacker,defender,move,field);
-  //console.log(result);
   if(result){
     res.send([result]);
   }else{
@@ -88,22 +86,18 @@ function capitalizeItem(string){
 
 function setUpPokemon(data){
   const stats=['hp','atk','def','spa','spd','spe'];
-  let preevs = data.filter(function(e){
-    for (let stat of stats){
-      console.log(e,stat);
-      if (e.includes(stat)){return true;}
-    }
-    return false;
-  });
+  const statChange={spatk:'spa',spdef:'spd',speed:'spe'};
   monEvs={};
-  for(let item of preevs){
+  for(let item of data){
     for(let stat of stats){
+      if(statChange.hasOwnProperty(item.substring(0,5))){
+        item=statChange[item]+item.substring(5);
+      }
       if(item.includes(stat)){
         monEvs[stat]=item.replace(stat+'=','');
       }
     }
   }
-  console.log(monEvs);
   item=data.find(element=>element.includes('item='));
   nature=data.find(element =>element.includes('nature='));
   boosts=data.find(element=> element.charAt(0)=="+"||element.charAt(0)=='-');
