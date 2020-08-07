@@ -76,7 +76,7 @@ app.get('/calc',(req,res) => {
   }
 });
 
-function capitalizeItem(string){
+function capitalizeWords(string){
   words=string.split(' ');
   for(i=0;i<words.length;i++){
     words[i]=words[i].charAt(0).toUpperCase()+words[i].substring(1);
@@ -90,7 +90,7 @@ function setUpPokemon(data){
   monEvs={};
   for(let item of data){
     for(let stat of stats){
-      console.log(item);
+      //console.log(item);
       if(statChange.hasOwnProperty(item.substring(0,5))){
         item=statChange[item.substring(0,5)]+item.substring(5);
       }
@@ -103,11 +103,12 @@ function setUpPokemon(data){
   nature=data.find(element =>element.includes('nature='));
   boosts=data.find(element=> element.charAt(0)=="+"||element.charAt(0)=='-');
   pokemon={
-    name:data[0],
-    item:item?capitalizeItem(item.substring(5).replace(/-/gi,' ')):null,
+    name:capitalizeWords(data[0]),
+    item:item?capitalizeWords(item.substring(5).replace(/-/gi,' ')):null,
     nature:nature?nature.substring(7):null,
     boosts:boosts?boosts.substring(1):null,
-    evs:monEvs
+    evs:monEvs,
+    dynamax:data.some(element => element.includes('dynamax'));
   };
   return pokemon;
 }

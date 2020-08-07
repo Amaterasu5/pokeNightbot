@@ -11,7 +11,8 @@ methods.performCalc = function(attacker,defender,move,field){
     evs:attacker.evs || {hp:252,atk:252,spa:252,spe:252},
     //ivs:attacker.ivs || {hp:31,atk:31,def:31,spa:31,spd:31,spe:31},
     boosts:attacker.boosts || {},
-    level:50
+    level:50,
+    isDynamaxed:attacker.dynamax || false
   });
   defenderCalc = new smogon.Pokemon(gen, defender.name,{
     item:defender.item,
@@ -19,7 +20,8 @@ methods.performCalc = function(attacker,defender,move,field){
     evs:defender.evs || {hp:0,atk:0,def:0,spa:0,spd:0,spe:252},
     //ivs:defender.ivs || {hp:31,atk:31,def:31,spa:31,spd:31,spe:31},
     boosts:defender.boosts || {},
-    level:50
+    level:50,
+    isDynamaxed:defender.dynamax || false
   });
   fieldCalc = new smogon.Field({
     gameType:field.singleTarget? 'Singles':'Doubles',
