@@ -108,8 +108,9 @@ function setUpPokemon(data){
     nature:nature?nature.substring(7):null,
     boosts:boosts?boosts.substring(1):null,
     evs:monEvs,
-    dynamax:data.some(element => element.includes('dynamax'));
+    dynamax:data.some(element => element.includes('dynamax'))
   };
+  console.log(pokemon.dynamax);
   return pokemon;
 }
 
