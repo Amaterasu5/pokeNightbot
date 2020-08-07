@@ -90,8 +90,9 @@ function setUpPokemon(data){
   monEvs={};
   for(let item of data){
     for(let stat of stats){
+      console.log(item);
       if(statChange.hasOwnProperty(item.substring(0,5))){
-        item=statChange[item]+item.substring(5);
+        item=statChange[item.substring(0,5)]+item.substring(5);
       }
       if(item.includes(stat)){
         monEvs[stat]=item.replace(stat+'=','');
