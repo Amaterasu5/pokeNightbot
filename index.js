@@ -72,7 +72,7 @@ app.get('/calc',(req,res) => {
   result = calculate.performCalc(attacker,defender,move,field);
   //console.log(result);
   if(result){
-    res.send(result);
+    res.send([result]);
   }else{
     res.send("sorry boss idk");
   }
