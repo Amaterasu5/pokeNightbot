@@ -84,6 +84,7 @@ methods.setUpField = function(data){
       }
     }
   }
+  let terrain = data.find(element=>terrains.includes(element));
   let switching = data.find(element=>element.includes('switch-'));
   attackerSide = {
     isTailwind:data.some(element=>element.includes('tailwind')),
@@ -99,7 +100,7 @@ methods.setUpField = function(data){
   };
   field={
     singleTarget:data.some(element=>element.includes('single')),
-    terrain:data.find(element=>terrains.includes(element)),
+    terrain:terrain? capitalizeWords(terrain):null,
     weather:weatherData? capitalizeWords(weatherData):null,
     gravity:data.some(element=>element.includes('gravity')),
     attackerSide:attackerSide,
