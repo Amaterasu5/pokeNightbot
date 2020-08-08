@@ -7,6 +7,7 @@ methods.performCalc = function(attacker,defender,move,field){
   attackerCalc = new smogon.Pokemon(gen,attacker.name,{
     item:attacker.item,
     nature:attacker.nature || 'Serious',
+    ability:attacker.ability,
     evs:attacker.evs || {hp:252,atk:252,spa:252,spe:252},
     //ivs:attacker.ivs || {hp:31,atk:31,def:31,spa:31,spd:31,spe:31},
     boosts:attacker.boosts || {},
@@ -16,6 +17,7 @@ methods.performCalc = function(attacker,defender,move,field){
   defenderCalc = new smogon.Pokemon(gen, defender.name,{
     item:defender.item,
     nature:defender.nature || 'Serious',
+    ability:attacker.ability,
     evs:defender.evs || {hp:0,atk:0,def:0,spa:0,spd:0,spe:252},
     //ivs:defender.ivs || {hp:31,atk:31,def:31,spa:31,spd:31,spe:31},
     boosts:defender.boosts || {},
@@ -23,7 +25,7 @@ methods.performCalc = function(attacker,defender,move,field){
     isDynamaxed:defender.dynamax || false
   });
   moveCalc = new smogon.Move(gen,move,{
-    useMax:attackerCalc.isDynamaxed
+    useMax:attackerCalc.isDynamaxed&&!['weather ball','terrain pulse'].includes(move)
   });
   fieldCalc = new smogon.Field({
     gameType:field.singleTarget? 'Singles':'Doubles',
@@ -61,11 +63,13 @@ methods.setUpPokemon = function(data){
   }
   item=data.find(element=>element.includes('item='));
   nature=data.find(element =>element.includes('nature='));
+  ability=data.find(element=>element.includes('ability='));
   boosts=data.find(element=> element.charAt(0)=="+"||element.charAt(0)=='-');
   pokemon={
     name:capitalizeWords(data[0]),
     item:item?capitalizeWords(item.substring(5).replace(/-/gi,' ')):null,
     nature:nature?nature.substring(7):null,
+    ability:ability?ability.substring(8):null,
     boosts:boosts?boosts.substring(1):null,
     evs:monEvs,
     dynamax:data.some(element => element.includes('dynamax'))

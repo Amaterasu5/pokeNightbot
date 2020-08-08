@@ -69,7 +69,6 @@ app.get('/calc',(req,res) => {
   move = params.get('move').replace(/-/,' ');
   fieldData = params.get('field');
   field = fieldData? calculate.setUpField(fieldData.split(',')):{};
-  //field = {};
   result = calculate.performCalc(attacker,defender,move,field);
   if(result){
     res.send([result]);
