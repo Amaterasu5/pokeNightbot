@@ -36,7 +36,11 @@ methods.performCalc = function(attacker,defender,move,field){
     defenderSide:field.defenderSide
   });
   result = smogon.calculate(gen, attackerCalc,defenderCalc,moveCalc,fieldCalc);
-  return result.desc();
+  try{
+    return result.desc();
+  }catch(err){
+    return "sorry love, no damage because of that damn ability";
+  }
 }
 
 function capitalizeWords(string){
