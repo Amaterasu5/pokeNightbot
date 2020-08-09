@@ -73,7 +73,7 @@ methods.setUpPokemon = function(data){
     name:capitalizeWords(data[0]),
     item:item?capitalizeWords(item.substring(5).replace(/-/gi,' ')):null,
     nature:nature?nature.substring(7):null,
-    ability:ability?ability.substring(8):null,
+    ability:ability?capitalizeWords(ability.substring(8).replace(/-/gi,' ')):null,
     boosts:boosts?boosts.substring(1):null,
     evs:monEvs,
     dynamax:data.some(element => element.includes('dynamax'))

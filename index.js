@@ -8,8 +8,6 @@ const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 const app = express();
-//app.use(bodyParser.json());
-//app.use(cookieParser());
 const url = require('url');
 
 app.get('/', (req, res) => {
