@@ -10,7 +10,7 @@ methods.performCalc = function(attacker,defender,move,field){
     ability:attacker.ability,
     evs:attacker.evs || {hp:252,atk:252,spa:252,spe:252},
     //ivs:attacker.ivs || {hp:31,atk:31,def:31,spa:31,spd:31,spe:31},
-    boosts:attacker.boosts || {},
+    //boosts:attacker.boosts || {},
     level:50,
     isDynamaxed:attacker.dynamax || false
   });
@@ -20,7 +20,7 @@ methods.performCalc = function(attacker,defender,move,field){
     ability:defender.ability,
     evs:defender.evs || {hp:0,atk:0,def:0,spa:0,spd:0,spe:252},
     //ivs:defender.ivs || {hp:31,atk:31,def:31,spa:31,spd:31,spe:31},
-    boosts:defender.boosts || {},
+    //boosts:defender.boosts || {},
     level:50,
     isDynamaxed:defender.dynamax || false
   });
@@ -35,6 +35,14 @@ methods.performCalc = function(attacker,defender,move,field){
     attackerSide:field.attackerSide,
     defenderSide:field.defenderSide
   });
+  attackerBoost=moveCalc.category=='Special'?'spa':move=='body press'?'def':'atk';
+  let temp=attacker.boosts? attacker.boosts:0;
+  attackerCalc.boosts[attackerBoost]=temp;
+
+  defenderBoost=moveCalc.category=='Special'?'spd':['psyshock','psystrike','secret sword'].includes(move)?'spd':'def';
+  temp=defender.boosts? defender.boosts:0;
+  defenderCalc.boosts[defenderBoost]=temp;
+
   result = smogon.calculate(gen, attackerCalc,defenderCalc,moveCalc,fieldCalc);
   try{
     return result.desc();
@@ -74,7 +82,7 @@ methods.setUpPokemon = function(data){
     item:item?capitalizeWords(item.substring(5).replace(/-/gi,' ')):null,
     nature:nature?nature.substring(7):null,
     ability:ability?capitalizeWords(ability.substring(8).replace(/-/gi,' ')):null,
-    boosts:boosts?boosts.substring(1):null,
+    boosts:boosts?boosts.replace('+',''):null,
     evs:monEvs,
     dynamax:data.some(element => element.includes('dynamax'))
   };
