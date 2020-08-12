@@ -1,14 +1,14 @@
 const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
-const allPokemon = require('./allPokemon.json').results;
-const galar = require('./pokemonGen8.json');
-const galarMoves = require('./gen8moves.json');
-const allMoves = require('./allMoves.json').results;
-const allAbilities = require('./allAbilities.json').results;
-const galarAbilities = require('./galarAbilities.json');
-const allItems = require('./allitems.json').results;
-const galarItems = require('./galarItems.json');
+const allPokemon = require('../data/allPokemon.json').results;
+const galar = require('../data/pokemonGen8.json');
+const galarMoves = require('../data/gen8moves.json');
+const allMoves = require('../data/allMoves.json').results;
+const allAbilities = require('../data/allAbilities.json').results;
+const galarAbilities = require('../data/galarAbilities.json');
+const allItems = require('../data/allitems.json').results;
+const galarItems = require('../data/galarItems.json');
 const errorCorrection = require('./error-correction.js');
 
 var methods = {};

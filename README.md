@@ -41,7 +41,11 @@ For example:
 will return
 252+ SpA Life Orb Adaptability Porygon-z Helping Hand Max Strike vs. -2 252 HP / 4 SpD Dynamax Tyranitar in Sand: 250-295 (60.3 - 71.2%) -- guaranteed 2HKO
 
+### Error Correction
+Currently there is a 2-character edit distance error correction implemented when what the user entered doesn't match an existing target on the !data and !learn commands. This guess is pretty good but imperfect, as there are a lot of Pokemon that are within 2 letters of each other.
+
 ### Todos
 
  - Write Tests
  - More user friendly?
+ - Improve Error Correction?

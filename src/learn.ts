@@ -1,8 +1,8 @@
-const learnsets = require('./learnsets.ts');
-const allPokemon = require('./allPokemon.json').results;
-const galar = require('./pokemonGen8.json');
-const allMoves = require('./allMoves.json').results;
-const galarMoves = require('./gen8moves.json');
+const learnsets = require('../data/learnsets.ts');
+const allPokemon = require('../data/allPokemon.json').results;
+const galar = require('../data/pokemonGen8.json');
+const allMoves = require('../data/allMoves.json').results;
+const galarMoves = require('../data/gen8moves.json');
 const errorCorrection = require('./error-correction.js');
 
 var methods = {};
