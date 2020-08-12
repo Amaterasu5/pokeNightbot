@@ -103,11 +103,12 @@ methods.setUpField = function(data){
   let terrain = data.find(element=>terrains.includes(element));
   let switching = data.find(element=>element.includes('switch-'));
   attackerSide = {
-    isTailwind:data.some(element=>element.includes('tailwind')),
+    isTailwind:data.some(element=>element.includes('attacker-tailwind')),
     isHelpingHand:data.some(element=>element.includes('helping-hand')||element.includes('hh')),
     isBattery:data.some(element=>element.includes('battery'))
   };
   defenderSide = {
+    isTailwind:data.some(element=>element.includes('defender-tailwind')),
     isReflect:data.some(element=>element.includes('reflect')),
     isLightScreen:data.some(element=>element.includes('light-screen')),
     isFriendGuard:data.some(element=>element.includes('friend-guard')),
