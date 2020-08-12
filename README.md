@@ -24,7 +24,7 @@ will return "Yes, conkeldurr can learn close combat in galar." whereas
 **!learn urshifu-single-strike aqua-jet**
 will return "No, urshifu singe strike cannot learn aqua jet in galar."
 
-### !calc [attacker] [defender] [move] [field]
+#### !calc [attacker] [defender] [move] [field]
 >Using [Pokemon Showdown's damage calc](https://calc.pokemonshowdown.com/), this command can calculate how much damage a pokemon will do to another based on its current stats, items, choice of move, and field effects. This information is usually presented as a range of percentage damage done that would be done to the defender at maximum HP.
 >**This implementation was designed for Pokemon VGC and defaults to a doubles lvl50 setting. To use for singles, or single-target spread attacks, add "single" or "single-target" to the field description. Lvl100 coming soon.**
 >*All spaces between words in a name must be replaced by dashes.*
