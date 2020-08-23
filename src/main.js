@@ -162,12 +162,14 @@ function displayAbility(abdata,index){
   if (index==undefined){
     index = abdata.generation.name=='generation-vii'? 0:1;
   }
+  let short_effect = abdata.effect_entries[0].short_effect.replace('$effect_chance',abdata.effect_chance);
   items.push('Original generation: '+abdata.generation.name+', '+abdata.effect_entries[index].short_effect);
   return items;
 }
 
 function displayItem(itemdata){
   items=[];
+  let short_effect = itemdata.effect_entries[0].short_effect.replace('$effect_chance',itemdata.effect_chance);
   items.push(itemdata.effect_entries[0].short_effect);
   return items;
 }
