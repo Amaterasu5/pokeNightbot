@@ -35,6 +35,7 @@ methods.performCalc = function(attacker,defender,move,field){
     attackerSide:field.attackerSide,
     defenderSide:field.defenderSide
   });
+  //boost assignment
   attackerBoost=moveCalc.category=='Special'?'spa':move=='body press'?'def':'atk';
   let temp=attacker.boosts? attacker.boosts:0;
   attackerCalc.boosts[attackerBoost]=temp;
@@ -47,7 +48,7 @@ methods.performCalc = function(attacker,defender,move,field){
   try{
     return result.desc();
   }catch(err){
-    return "sorry love, no damage because of that damn ability";
+    return "sorry love, no damage due to that damn ability";
   }
 }
 

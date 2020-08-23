@@ -152,7 +152,8 @@ function displayPokemon(pokedata){
 
 function displayMove(movedata){
    items=[];
-   items.push('Type: '+movedata.type.name+', Power: '+movedata.power+', Accuracy: '+movedata.accuracy+', Priority: '+ movedata.priority+ ', Max PP: '+parseFloat(movedata.pp,10)*(8.0/5)+', Damage type: '+movedata.damage_class.name+ ', '+movedata.effect_entries[0].short_effect);
+   let short_effect = movedata.effect_entries[0].short_effect.replace('$effect_chance',movedata.effect_chance);
+   items.push('Type: '+movedata.type.name+', Power: '+movedata.power+', Accuracy: '+movedata.accuracy+', Priority: '+ movedata.priority+ ', Max PP: '+parseFloat(movedata.pp,10)*(8.0/5)+', Damage type: '+movedata.damage_class.name+ ', '+short_effect);
    return items;
 }
 
