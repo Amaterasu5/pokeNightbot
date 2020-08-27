@@ -26,6 +26,8 @@ methods.doesItLearn = function(pokemon, move){
 }
 
 methods.doesPokemonMoveExist = function(pokemon, move){
+  if (pokemon='urshifu') pokemon='urshifusinglestrike';
+  if (move='urshifu') move='urshifusinglestrike';
   let returnPokemon = learnsets[pokemon]!=undefined? pokemon : null;
   if(!returnPokemon){
     for (const item of allPokemon){
