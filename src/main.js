@@ -15,7 +15,7 @@ var methods = {};
 methods.displayData = async function(pdata,pdata8, fixed=false){
   let thisUrl=null;
   let apiData=null;
-  if(pdata8=='urshifu') pdata8='urshifu-single-strike';
+  if(pdata8=='urshifu') pdata8='urshifu_single_strike';
   thisPokemon = allPokemon.find(element => element.name == pdata);
   thisMove = allMoves.find(element => element.name == pdata);
   thisAbility = allAbilities.find(element => element.name == pdata);
