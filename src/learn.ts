@@ -31,12 +31,12 @@ methods.doesPokemonMoveExist = function(pokemon, move){
   let returnPokemon = learnsets[pokemon]!=undefined? pokemon : null;
   if(!returnPokemon){
     for (const item of allPokemon){
-      if (errorCorrection.editDistance(pokemon,item.name)<2){
+      if (errorCorrection.editDistance(pokemon,item.name)<3){
         returnPokemon = item.name;
         break;
       }
     }for (const item in galar){
-      if(errorCorrection.editDistance(pokemon,item)<2){
+      if(errorCorrection.editDistance(pokemon,item)<3){
         returnPokemon = item;
         break;
       }
