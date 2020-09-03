@@ -2,8 +2,22 @@
 <html lang='en'>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="main.js"></script>
+  <style>
+  body {background-color:rgba(176, 224, 230,.45);font-family:Georgia,serif;}
+  </style>
 </head>
 <body>
+  <h2> How to set up pokeNightbot </h2><br>
+  <h3> Just add all these commands to your nightbot</h3>
+  <h6> Yes this website is shitty on purpose </h6><br>
+  <h3> !data </h3>
+  <div> $(eval $(urlfetch https://pokenightbot.herokuapp.com/?data=$(1)))</div><br>
+  <h3> !learn </h3>
+  <div> $(urlfetch https://pokenightbot.herokuapp.com/learn/?pokemon=$(1)&move=$(2))</div><br>
+  <h3> !calc </h3>
+  <div> attacker=$(querystring $(1))&defender=$(querystring $(2))&move=$(3)&field=$(querystring $(4))</div><br>
+  <h3> !_calc (helper method for !calc) </h3>
+  <div> $(eval $(urlfetch https://pokenightbot.herokuapp.com/calc/?$(query)))</div><br>
+  <div> If you wanna know how to use each of these in depth, check out the <a href="https://github.com/Amaterasu5/pokeNightbot">README</a>
 </body>
 </html>
