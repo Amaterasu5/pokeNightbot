@@ -15,7 +15,7 @@ var methods = {};
 methods.displayData = async function(pdata,pdata8, fixed=false){
   let thisUrl=null;
   let apiData=null;
-  if(pdata8=='urshifu') pdata8='urshifu_single_strike';
+  [pdata,pdata8] = errorCorrection.inputFix(pdata,pdata8);
   thisPokemon = allPokemon.find(element => element.name == pdata);
   thisMove = allMoves.find(element => element.name == pdata);
   thisAbility = allAbilities.find(element => element.name == pdata);
@@ -138,7 +138,7 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
     if(pseudo){
       return methods.displayData(pseudo,pseudo,fixed=true);
     }else{
-      return [false,null,["lol wtf was that"]]; //you spelled it too wrong kek
+      return [false,null,["that's not it bruh"]]; //you spelled it too wrong kek
     }
   }
 }

@@ -23,4 +23,22 @@ function editRecur(string1, string2, m, n, memoTable){
   }
   return memoTable[m-1][n-1] = 1+ Math.min(editRecur(string1,string2,m-1,n, memoTable),editRecur(string1,string2,m,n-1,memoTable),editRecur(string1,string2,m-1,n-1, memoTable));
 }
+
+methods.inputFix = function(pdata,pdata8){
+  //mega text replacement
+  if(pdata.substring(0,5)=='mega-'){
+    for(let i=4; i<pdata.length-1;i++){
+      if (pdata.charAt(i+1)=='-'){
+        pdata = pdata.slice(5,i+1)+"-mega"+pdata.slice(i+1);
+        break;
+      }
+      else if (i==pdata.length-2){
+        pdata = pdata.slice(5)+"-mega";
+      }
+    }
+  }
+  //urshifu forme fix
+  if(pdata8=='urshifu') pdata8='urshifu_single_strike';
+  return [pdata,pdata8];
+}
 module.exports = methods;

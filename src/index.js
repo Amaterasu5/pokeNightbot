@@ -46,7 +46,7 @@ app.get('/learn',(req,res) => {
   const [existence,fmon,fmove] = learnFunction.doesPokemonMoveExist(ppokemon,move);
   const [rexistence,rmon,rmove] = learnFunction.doesPokemonMoveExist(pmove,pokemon);
   if (!(existence||rexistence)){
-    res.send("lol wtf was that?");
+    res.send("that's not it bruh");
   }else{
     if(rexistence){
       move = rmove.replace(/-/gi,' ').replace(/_/gi,' ');
