@@ -37,8 +37,15 @@ methods.inputFix = function(pdata,pdata8){
       }
     }
   }
+  //location forme text replacement
+  else if(pdata.substring(0,6).includes('alola')){
+    pdata=pdata.replace(/(?:alola)+n?-/gi,'').concat('-alola');
+  }
+  else if(pdata8.substring(0,8).includes('galar')){
+    pdata8=pdata8.replace(/(?:galar)(?:ian)?_/gi,'').concat('_galar');
+  }
   //urshifu forme fix
-  if(pdata8=='urshifu') pdata8='urshifu_single_strike';
+  else if(pdata8=='urshifu') pdata8='urshifu_single_strike';
   return [pdata,pdata8];
 }
 module.exports = methods;
