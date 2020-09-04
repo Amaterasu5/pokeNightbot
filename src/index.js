@@ -9,6 +9,17 @@ const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 const app = express();
 const url = require('url');
+const fs = require('fs');
+const path = require('path');
+
+app.get('/index',(req,res) => {
+  res.writeHead(200,{
+    'Content-Type':'text/html'
+  });
+  fs.readFile(path.join(__dirname,'index.html'),null,(e,d)=>{
+    res.write(d);
+  });
+});
 
 app.get('/', (req, res) => {
   var searchQuery = req.originalUrl.replace(req.path,'');
