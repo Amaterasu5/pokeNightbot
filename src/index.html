@@ -14,7 +14,7 @@
   <div> $(eval $(urlfetch https://pokenightbot.herokuapp.com/?data=$(1)))</div><br>
   <h3> !learn </h3>
   <div> $(urlfetch https://pokenightbot.herokuapp.com/learn/?pokemon=$(1)&move=$(2))</div><br>
-  <h3> !calc </h3>
+  <h3> !calc (Make sure to alias this to !_calc) </h3>
   <div> attacker=$(querystring $(1))&defender=$(querystring $(2))&move=$(3)&field=$(querystring $(4))</div><br>
   <h3> !_calc (helper method for !calc) </h3>
   <div> $(eval $(urlfetch https://pokenightbot.herokuapp.com/calc/?$(query)))</div><br>
