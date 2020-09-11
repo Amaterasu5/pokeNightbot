@@ -12,7 +12,7 @@ const galarItems = require('../data/galarItems.json');
 const errorCorrection = require('./error-correction.js');
 
 var methods = {};
-methods.displayData = async function(pdata,pdata8, fixed=false){
+methods.displayData = async function(pdata,pdata8,extended,fixed=false){
   let thisUrl=null;
   let apiData=null;
   [pdata,pdata8] = errorCorrection.inputFix(pdata,pdata8);
@@ -38,7 +38,7 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
     await Promise.all([promise1]);
     return [fixed,pdata,displayPokemon(apiData)];
   }else if (galarMoves[pdata8]!=undefined){
-    return [fixed,pdata8,displayMove(galarMoves[pdata8])];
+    return [fixed,pdata8,displayMove(galarMoves[pdata8],extended=false)];
   }else if (thisMove!=undefined){
     thisUrl = thisMove.url;
     var promise2 = new Promise((resolve,reject) => {
@@ -52,9 +52,9 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
       });
     });
     await Promise.all([promise2]);
-    return [fixed,pdata,displayMove(apiData)];
+    return [fixed,pdata,displayMove(apiData,extended)];
   }else if (galarAbilities[pdata8]!=undefined){
-    return [fixed,pdata8,displayAbility(galarAbilities[pdata8],0)];
+    return [fixed,pdata8,displayAbility(galarAbilities[pdata8],0,extended=false)];
   }else if (thisAbility!=undefined){
     thisUrl = thisAbility.url;
     var promise3 = new Promise((resolve,reject) => {
@@ -68,9 +68,9 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
       });
     });
     await Promise.all([promise3]);
-    return [fixed,pdata,displayAbility(apiData,undefined)];
+    return [fixed,pdata,displayAbility(apiData,undefined,extended)];
   }else if(galarItems[pdata8]!=undefined){
-    return [fixed,pdata8,displayItem(galarItems[pdata8])];
+    return [fixed,pdata8,displayItem(galarItems[pdata8],extended=false)];
   }else if (thisItem!=undefined){
     thisUrl=thisItem.url;
     var promise4 = new Promise((resolve,reject) => {
@@ -84,7 +84,7 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
       });
     });
     await Promise.all([promise4]);
-    return [fixed,pdata,displayItem(apiData)];
+    return [fixed,pdata,displayItem(apiData,extended)];
   }else{//when people put in bullshit or spell things wrong
     let pseudo = null;
     for(item of allPokemon){
@@ -136,7 +136,7 @@ methods.displayData = async function(pdata,pdata8, fixed=false){
       }
     }
     if(pseudo){
-      return methods.displayData(pseudo,pseudo,fixed=true);
+      return methods.displayData(pseudo,pseudo,extended,fixed=true);
     }else{
       return [false,null,["that's not it bruh"]]; //you spelled it too wrong kek
     }
@@ -151,27 +151,42 @@ function displayPokemon(pokedata){
   return items;
 }
 
-function displayMove(movedata){
+function displayMove(movedata,extended){
    items=[];
-   let short_effect = movedata.effect_entries[0].short_effect.replace('$effect_chance',movedata.effect_chance);
+   let short_effect='';
+   if(extended){
+     short_effect = movedata.effect_entries[0].effect.replace('$effect_chance',movedata.effect_chance).replace(/\n/gi,'');
+   }else{
+     short_effect = movedata.effect_entries[0].short_effect.replace('$effect_chance',movedata.effect_chance);
+   }
    items.push('Type: '+movedata.type.name+', Power: '+movedata.power+', Accuracy: '+movedata.accuracy+', Priority: '+ movedata.priority+ ', Max PP: '+parseFloat(movedata.pp,10)*(8.0/5)+', Damage type: '+movedata.damage_class.name+ ', '+short_effect);
    return items;
 }
 
-function displayAbility(abdata,index){
+function displayAbility(abdata,index,extended){
   items=[];
   if (index==undefined){
     index = abdata.generation.name=='generation-vii'? 0:1;
   }
-  let short_effect = abdata.effect_entries[0].short_effect.replace('$effect_chance',abdata.effect_chance);
-  items.push('Original generation: '+abdata.generation.name+', '+abdata.effect_entries[index].short_effect);
+  let short_effect='';
+  if(extended){
+    short_effect = abdata.effect_entries[index].effect.replace('$effect_chance',abdata.effect_chance).replace(/\n/gi,'');
+  }else{
+    short_effect = abdata.effect_entries[index].short_effect.replace('$effect_chance',abdata.effect_chance);
+  }
+  items.push('Original generation: '+abdata.generation.name+', '+short_effect);
   return items;
 }
 
-function displayItem(itemdata){
+function displayItem(itemdata,extended){
   items=[];
-  let short_effect = itemdata.effect_entries[0].short_effect.replace('$effect_chance',itemdata.effect_chance);
-  items.push(itemdata.effect_entries[0].short_effect);
+  let short_effect='';
+  if(extended){
+    short_effect = itemdata.effect_entries[0].effect.replace('$effect_chance',itemdata.effect_chance).replace(/\n/gi,'');
+  }else{
+    short_effect = itemdata.effect_entries[0].short_effect.replace('$effect_chance',itemdata.effect_chance);
+  }
+  items.push(short_effect);
   return items;
 }
 
