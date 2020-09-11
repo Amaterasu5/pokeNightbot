@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const mainFunctions = require('./main.js');
 const learnFunction = require('./learn.ts');
 const calculate = require('./calculate.js');
+const evString = require('./evs.js');
 const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
@@ -74,19 +75,27 @@ app.get('/learn',(req,res) => {
 app.get('/calc',(req,res) => {
   var searchQuery = req.originalUrl.replace(req.path,'');
   let params = new URLSearchParams(searchQuery);
-  attackerData = params.get('attacker').split(',');
-  attacker = calculate.setUpPokemon(attackerData);
-  defenderData = params.get('defender').split(',');
-  defender = calculate.setUpPokemon(defenderData);
-  move = params.get('move').replace(/-/,' ');
-  fieldData = params.get('field');
-  field = fieldData? calculate.setUpField(fieldData.split(',')):{};
-  result = calculate.performCalc(attacker,defender,move,field);
+  let attackerData = params.get('attacker').split(',');
+  let attacker = calculate.setUpPokemon(attackerData);
+  let defenderData = params.get('defender').split(',');
+  let defender = calculate.setUpPokemon(defenderData);
+  let move = params.get('move').replace(/-/,' ');
+  let fieldData = params.get('field');
+  let field = fieldData? calculate.setUpField(fieldData.split(',')):{};
+  let result = calculate.performCalc(attacker,defender,move,field);
   if(result){
     res.send([result]);
   }else{
     res.send("sorry boss idk");
   }
+});
+
+app.get('/evs',(req,res)=>{
+  var searchQuery = req.originalUrl.replace(req.path,'');
+  let params = new URLSearchParams(searchQuery);
+  let rawEVs = params.get('evs');
+  result=evString.vitamins(rawEVs);
+  res.send([result]);
 });
 
 app.listen(process.env.PORT||5000);
