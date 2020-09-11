@@ -13,7 +13,7 @@ methods.vitamins = function(evString){
     }
   });
   evNumbers = evs.map((e)=>parseInt(e.replace(/[a-z]+/gi,'')));
-  evStats = evs.map((e)=>e.replace(/[0-9]+/gi,'').toLowerCase());
+  evStats = evs.map((e)=>e.replace(/[0-9]+/gi,''));
   neededFeathers = evNumbers.map((item) => item%10);
   evVitamins=[];
   evFeathers=[];
