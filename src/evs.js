@@ -39,9 +39,9 @@ methods.vitamins = function(evString){
   resp="";
   for(let i=0;i<evStats.length;i++){
     if(evVitamins[i]!=0){
-      resp+=evVitamins[i]+vitamins[evStats[i]]+', ';
+      resp+=evVitamins[i]+' '+vitamins[evStats[i]]+', ';
     }if(evFeathers[i]!=0){
-      resp+=evFeathers[i]+feathers[evStats[i]]+'feathers, ';
+      resp+=evFeathers[i]+' '+feathers[evStats[i]]+' feathers, ';
     }
   }
   return resp;
