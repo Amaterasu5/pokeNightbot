@@ -93,7 +93,7 @@ app.get('/calc',(req,res) => {
 app.get('/evs',(req,res)=>{
   var searchQuery = req.originalUrl.replace(req.path,'');
   let params = new URLSearchParams(searchQuery);
-  let rawEVs = params.get('evs').toLowerCase().replace(' ','');
+  let rawEVs = params.get('evs').toLowerCase().replace(/ /gi,'');
   result=evString.vitamins(rawEVs);
   res.send([result]);
 });
