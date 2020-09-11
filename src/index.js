@@ -26,9 +26,11 @@ app.get('/', (req, res) => {
   let params = new URLSearchParams(searchQuery);
   let pdata = params.get('data').toLowerCase();
   let pdata8 = pdata.replace(/-/gi,'_');
-  let extended = params.get('extended');
+  console.log(params.get('extended'));
+  let extended = params.get('extended')? params.get('extended').includes('extra'):false;
+  console.log(extended);
   (async function(){
-    const [fixed,finalP,info] = await mainFunctions.displayData(pdata,pdata8,extended||false);
+    const [fixed,finalP,info] = await mainFunctions.displayData(pdata,pdata8,extended);
     if(fixed){
       res.send(["Did you mean "+finalP+"? " + info]);
     }else{
