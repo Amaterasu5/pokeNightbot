@@ -98,4 +98,17 @@ app.get('/evs',(req,res)=>{
   res.send([result]);
 });
 
+app.get('/ct',(req,res)=>{
+  var searchQuery = req.originalUrl.replace(req.path,'');
+  let params = new URLSearchParams(searchQuery);
+  let mon = params.get('mon').toLowerCase();
+  var crownTundra = ['Nidoran-f','Nidorina', 'Nidoqueen', 'Nidoran-m', 'Nidorino', 'Nidoking', 'Zubat', 'Golbat', 'Jynx', 'Electabuzz', 'Magmar', 'Omanyte', 'Omastar', 'Kabuto', 'Kabutops', 'Aerodactyl', 'Articuno', 'Zapdos', 'Moltres', 'Dratini', 'Dragonair', 'Dragonite', 'Crobat', 'Smoochum', 'Elekid', 'Magby', 'Raikou', 'Entei', 'Suicune', 'Lugia', 'Ho-Oh', 'Treecko','Grovyle','Sceptile','Torchic','Combusken','Blaziken','Mudkip','Marshtomp', 'Swampert', 'Aron', 'Lairon', 'Aggron', 'Swablu', 'Altaria', 'Lileep', 'Cradily', 'Anorith', 'Armaldo', 'Absol', 'Spheal', 'Sealeo', 'Walrein', 'Relicanth', 'Bagon', 'Shelgon', 'Salamence', 'Beldum', 'Metang', 'Metagross', 'Regirock', 'Regice', 'Registeel', 'Latias', 'Latios', 'Kyogre', 'Groudon', 'Rayquaza', 'Spiritomb', 'Gible', 'Gabite', 'Garchomp', 'Electivire', 'Magmortar', 'Uxie', 'Mesprit', 'Azelf','Dialga','Palkia', 'Heatran','Regigigas','Giratina','Cresselia', 'Victini', 'Audino', 'Tirtouga', 'Carracosta', 'Archen', 'Archeops', 'Cryogonal', 'Tornadus','Tornadus-therian','Tornadus-incarnate', 'Thundurus','Thundurus-incarnate', 'Thundurus-therian', 'Landorus','Landorus-incarnate','Landorus-therian', 'Genesect', 'Tyrunt', 'Tyrantrum', 'Amaura', 'Aurorus', 'Carbink', 'Xerneas', 'Yveltal', 'Zygarde', 'Diancie', 'Volcanion', 'Tapu-Koko', 'Tapu-Lele', 'Tapu-Bulu', 'Tapu-Fini', 'Nihilego', 'Buzzwole', 'Pheromosa', 'Xurkitree', 'Celesteela', 'Kartana','Guzzlord','Poipole','Naganadel','Stakataka','Blacephalon'];
+  crownTundra = crownTundra.map(x=>x.toLowerCase());
+  if(crownTundra.includes(mon)){
+    res.send("Yeah, "+mon+" is in Crown Tundra");
+  }else{
+    res.send("No, "+mon+" is not in Crown Tundra :(");
+  }
+});
+
 app.listen(process.env.PORT||5000);
