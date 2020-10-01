@@ -41730,12 +41730,15 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	deoxysattack: {
+		baby : "deoxys",
 		eventOnly: true,
 	},
 	deoxysdefense: {
+		baby : "deoxys",
 		eventOnly: true,
 	},
 	deoxysspeed: {
+		baby : "deoxys",
 		eventOnly: true,
 	},
 	turtwig: {
@@ -46716,26 +46719,31 @@ const BattleLearnsets = {
 		],
 	},
 	rotomheat: {
+		baby : "rotom",
 		learnset: {
 			overheat: ["8L1", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotomwash: {
+		baby : "rotom",
 		learnset: {
 			hydropump: ["8L1", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotomfrost: {
+		baby : "rotom",
 		learnset: {
 			blizzard: ["8L1", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotomfan: {
+		baby : "rotom",
 		learnset: {
 			airslash: ["8L1", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotommow: {
+		baby : "rotom",
 		learnset: {
 			leafstorm: ["8L1", "7R", "6R", "5R", "4R"],
 		},
@@ -47489,6 +47497,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	giratinaorigin: {
+		baby : "giratina",
 		eventOnly: true,
 	},
 	cresselia: {
@@ -47889,6 +47898,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	shayminsky: {
+		baby : "shaymin",
 		eventOnly: true,
 	},
 	arceus: {
@@ -48037,54 +48047,71 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	arceusbug: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusdark: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusdragon: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceuselectric: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusfairy: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusfighting: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusfire: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusflying: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusghost: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusgrass: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusground: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusice: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceuspoison: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceuspsychic: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceusrock: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceussteel: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	arceuswater: {
+		baby : "arceus",
 		eventOnly: true,
 	},
 	victini: {
@@ -59239,6 +59266,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	tornadustherian: {
+		baby : "tornadus",
 		eventOnly: true,
 	},
 	thundurus: {
@@ -59327,6 +59355,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	thundurustherian: {
+		baby : "thundurus",
 		eventOnly: true,
 	},
 	reshiram: {
@@ -59599,6 +59628,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	landorustherian: {
+		baby:'landorus',
 		eventOnly: true,
 	},
 	kyurem: {
@@ -59955,6 +59985,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	keldeoresolute: {
+		baby : "keldeo",
 		eventOnly: true,
 	},
 	meloetta: {
@@ -60149,15 +60180,19 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	genesectburn: {
+		baby : "genesect",
 		eventOnly: true,
 	},
 	genesectchill: {
+		baby : "genesect",
 		eventOnly: true,
 	},
 	genesectdouse: {
+		baby : "genesect",
 		eventOnly: true,
 	},
 	genesectshock: {
+		baby : "genesect",
 		eventOnly: true,
 	},
 	chespin: {
@@ -64835,6 +64870,7 @@ const BattleLearnsets = {
 		},
 	},
 	pumpkaboosuper: {
+		baby : "pumpkaboo",
 		learnset: {
 			astonish: ["6S0"],
 			scaryface: ["6S0"],
@@ -65619,6 +65655,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	hoopaunbound: {
+		baby : "hoopaconfined",
 		eventOnly: true,
 	},
 	volcanion: {
@@ -71883,18 +71920,21 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	necrozmaduskmane: {
+		baby : "necrozma",
 		learnset: {
 			sunsteelstrike: ["8R", "7R"],
 		},
 		eventOnly: true,
 	},
 	necrozmadawnwings: {
+		baby : "necrozma",
 		learnset: {
 			moongeistbeam: ["8R", "7R"],
 		},
 		eventOnly: true,
 	},
 	necrozmaultra: {
+		baby : "necrozma",
 		learnset: {
 			moongeistbeam: ["8R", "7R"],
 			sunsteelstrike: ["8R", "7R"],
@@ -76236,6 +76276,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	zaciancrowned: {
+		baby : "zacian",
 		learnset: {
 			behemothblade: ["8M", "8L33"],
 		},
@@ -76306,6 +76347,7 @@ const BattleLearnsets = {
 		eventOnly: true,
 	},
 	zamazentacrowned: {
+		baby : "zamazenta",
 		learnset: {
 			behemothbash: ["8M", "8L33"],
 		},
