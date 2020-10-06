@@ -7,20 +7,36 @@ const errorCorrection = require('./error-correction.js');
 
 var methods = {};
 
-methods.doesItLearn = function(pokemon, move){
+methods.doesItLearn = function(pokemon, move, gen){
   const checkBaby = learnsets[pokemon].baby;
   if (checkBaby!=undefined){
     const babyLearnedGens = learnsets[checkBaby].learnset[move];
     if(babyLearnedGens!=undefined){
-      if(babyLearnedGens[0].charAt(0)=='8'&&babyLearnedGens[0].charAt(1)!='V'){
+      if(gen=='any'){
         return true;
+      }else if(gen=='8'){
+        if(babyLearnedGens[0].charAt(0)=='8'&&babyLearnedGens[0].charAt(1)!='V'){
+          return true;
+        }
+      }else{
+        if(babyLearnedGens.map(e=>e.charAt(0)).includes(gen)){
+          return true;
+        }
       }
     }
   }
   const learnedGens = learnsets[pokemon].learnset[move];
   if (learnedGens==undefined){return false;}
-  if (learnedGens[0].charAt(0)=='8'&&learnedGens[0].charAt(1)!='V'){
+  if(gen=='any'){
     return true;
+  }else if(gen=='8'){
+    if (learnedGens[0].charAt(0)=='8'&&learnedGens[0].charAt(1)!='V'){
+      return true;
+    }
+  }else{
+    if(learnedGens.map(e=>e.charAt(0)).includes(gen)){
+      return true;
+    }
   }
   return false;
 }

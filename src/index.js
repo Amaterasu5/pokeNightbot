@@ -45,6 +45,7 @@ app.get('/learn',(req,res) => {
   let ppokemon = pokemon.replace(/-/gi,'');
   let move = params.get('move').toLowerCase();
   let pmove = move.replace(/-/gi,'');
+  let gen = params.get('gen')?params.get('gen'):'8';
   const [existence,fmon,fmove] = learnFunction.doesPokemonMoveExist(ppokemon,move);
   const [rexistence,rmon,rmove] = learnFunction.doesPokemonMoveExist(pmove,pokemon);
   if (!(existence||rexistence)){
@@ -61,11 +62,12 @@ app.get('/learn',(req,res) => {
       ppokemon = fmon.replace(/-/gi,'').replace(/_/gi,'');
       pmove = fmove.replace(/-/gi,'').replace(/_/gi,'');
     }
-    const canLearn = learnFunction.doesItLearn(ppokemon,pmove);
+    const canLearn = learnFunction.doesItLearn(ppokemon,pmove,gen);
+    let phrase = gen!='any'?"in gen "+gen+".":canLearn?"some generation.":"any generation.";
     if (canLearn){
-      res.send("Yes, "+pokemon+" can learn "+move+" in galar.");
+      res.send("Yes, "+pokemon+" can learn "+move+" in "+phrase);
     }else{
-      res.send("No, "+pokemon+" can't learn "+move+" in galar.");
+      res.send("No, "+pokemon+" can't learn "+move+" in "+phrase);
     }
   }
 });
