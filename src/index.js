@@ -45,7 +45,7 @@ app.get('/learn',(req,res) => {
   let ppokemon = pokemon.replace(/-/gi,'');
   let move = params.get('move').toLowerCase();
   let pmove = move.replace(/-/gi,'');
-  let gen = params.get('gen')?params.get('gen'):'8';
+  let gen = params.get('gen')!='null'?params.get('gen'):'8';
   const [existence,fmon,fmove] = learnFunction.doesPokemonMoveExist(ppokemon,move);
   const [rexistence,rmon,rmove] = learnFunction.doesPokemonMoveExist(pmove,pokemon);
   if (!(existence||rexistence)){
