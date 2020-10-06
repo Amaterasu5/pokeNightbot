@@ -63,11 +63,11 @@ app.get('/learn',(req,res) => {
       pmove = fmove.replace(/-/gi,'').replace(/_/gi,'');
     }
     const canLearn = learnFunction.doesItLearn(ppokemon,pmove,gen);
-    let phrase = gen!='any'?"in gen "+gen+".":canLearn?"some generation.":"any generation.";
+    let phrase = gen!='any'?" in gen "+gen+".":canLearn?" in some generation.":" in any generation.";
     if (canLearn){
-      res.send("Yes, "+pokemon+" can learn "+move+" in "+phrase);
+      res.send("Yes, "+pokemon+" can learn "+move+phrase);
     }else{
-      res.send("No, "+pokemon+" can't learn "+move+" in "+phrase);
+      res.send("No, "+pokemon+" can't learn "+move+phrase);
     }
   }
 });
