@@ -84,7 +84,7 @@
 "priority":0,
 "pp":10,
 "damage_class":{"name":"status"},
-"effect_entries":[{"short_effect":"Raises attack and defense stats of all allies by one stage."}],
+"effect_entries":[{"short_effect":"Raises attack and defense stats of user's allies by one stage."}],
 "type":{"name":"fighting"}},
 "corrosive_gas":{
 "power":null,
