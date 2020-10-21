@@ -22,7 +22,7 @@ methods.displayData = async function(pdata,pdata8,extended,fixed=false){
   thisItem = allItems.find(element => element.name == pdata);
 
   if (galar[pdata8]!=undefined){
-    return [fixed,pdata8,displayPokemon(galar[pdata8].stats)];
+    return [fixed,pdata8,displayPokemon(galar[pdata8].abilities,galar[pdata8].stats)];
   }else if (thisPokemon!=undefined){
     thisUrl = thisPokemon.url;
     var promise1 = new Promise((resolve,reject) => {
@@ -30,13 +30,14 @@ methods.displayData = async function(pdata,pdata8,extended,fixed=false){
         url:thisUrl,
         dataType:'json',
         success:function(data){
+          apiAbilities = data.abilities;
           apiData = data.stats;
           resolve();
         }
       });
     });
     await Promise.all([promise1]);
-    return [fixed,pdata,displayPokemon(apiData)];
+    return [fixed,pdata,displayPokemon(apiAbilities,apiData)];
   }else if (galarMoves[pdata8]!=undefined){
     return [fixed,pdata8,displayMove(galarMoves[pdata8],extended=false)];
   }else if (thisMove!=undefined){
@@ -143,12 +144,18 @@ methods.displayData = async function(pdata,pdata8,extended,fixed=false){
   }
 }
 
-function displayPokemon(pokedata){
+function displayPokemon(abilities,pokedata){
   items=[];
   for (i=0;i<6;i++){
     items.push(' '+pokedata[i].stat.name+': '+ pokedata[i].base_stat);
   }
-  return items;
+  abs=[];
+  for(i=0;i<abilities.length;i++){
+    abs.push(abilities[i].ability.name);
+  }
+  items=items.join();
+  abs=" | abilities: ".concat(abs.join(', '));
+  return items+abs;
 }
 
 function displayMove(movedata,extended){
@@ -160,7 +167,7 @@ function displayMove(movedata,extended){
      short_effect = movedata.effect_entries[0].short_effect.replace('$effect_chance',movedata.effect_chance);
    }
    items.push('Type: '+movedata.type.name+', Power: '+movedata.power+', Accuracy: '+movedata.accuracy+', Priority: '+ movedata.priority+ ', Max PP: '+parseFloat(movedata.pp,10)*(8.0/5)+', Damage type: '+movedata.damage_class.name+ ', '+short_effect);
-   return items;
+   return items.join();
 }
 
 function displayAbility(abdata,index,extended){
@@ -175,7 +182,7 @@ function displayAbility(abdata,index,extended){
     short_effect = abdata.effect_entries[index].short_effect.replace('$effect_chance',abdata.effect_chance);
   }
   items.push('Original generation: '+abdata.generation.name+', '+short_effect);
-  return items;
+  return items.join();
 }
 
 function displayItem(itemdata,extended){
@@ -187,7 +194,7 @@ function displayItem(itemdata,extended){
     short_effect = itemdata.effect_entries[0].short_effect.replace('$effect_chance',itemdata.effect_chance);
   }
   items.push(short_effect);
-  return items;
+  return items.join();
 }
 
 module.exports = methods;

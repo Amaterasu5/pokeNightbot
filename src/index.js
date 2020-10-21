@@ -29,11 +29,17 @@ app.get('/', (req, res) => {
   let pdata8 = pdata.replace(/-/gi,'_');
   let extended = params.get('extended')? params.get('extended').includes('extra'):false;
   (async function(){
-    const [fixed,finalP,info] = await mainFunctions.displayData(pdata,pdata8,extended);
+    let [fixed,finalP,info] = await mainFunctions.displayData(pdata,pdata8,extended);
     if(fixed){
+      if(info.length+finalP.length>384){
+        info=info.substring(0,384-finalP.length);
+      }
       res.send(["Did you mean "+finalP+"? " + info]);
     }else{
-      res.send(info);
+      if(info.length>399){
+        info=info.substring(0,400);
+      }
+      res.send([info]);
     }
   })();
 });
