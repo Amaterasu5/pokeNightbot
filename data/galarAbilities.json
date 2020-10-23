@@ -79,6 +79,24 @@
 "wandering_spirit":{
   "generation":{"name":"generation-viii"},
   "effect_entries":[{"short_effect":"When a pokemon makes contact with a pokemon with this ability, their abilities are swapped and may reactivate."}]},
+"transistor":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"Increases Electric-type moves by ?x."}]},
+"dragon's_maw":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"Increases Dragon-type moves by ?x."}]},
+"chilling_neigh":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A Pokemon with this ability increases its Attack by 1 stage when it knocks out another Pokemon."}]},
+"grim_neigh":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"A Pokemon with this ability increases its Special Attack by 1 stage when it knocks out another Pokemon."}]},
+"curious_medicine":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"When a pokemon with this ability enters battle, it removes stat changes on all allies."}]},
+"as_one":{
+  "generation":{"name":"generation-viii"},
+  "effect_entries":[{"short_effect":"This ability gives Calyrex both Unnerve and Grim/Chilling Neigh."}]},
 "drizzle":{
   "generation":{"name":"generation-iii"},
   "effect_entries":[{"short_effect":"The pokemon makes it rain for 5 turns when it enters battle."}]},
