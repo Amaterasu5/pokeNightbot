@@ -3338,7 +3338,7 @@ const BattleLearnsets = {
 	},
 	pikachugmax: {
 		baby : "pichu",
-	}
+	},
 	pikachuworld: {
 		learnset: {
 			agility: ["8M", "8L24"],
