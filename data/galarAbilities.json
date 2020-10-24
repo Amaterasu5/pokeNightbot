@@ -81,10 +81,10 @@
   "effect_entries":[{"short_effect":"When a pokemon makes contact with a pokemon with this ability, their abilities are swapped and may reactivate."}]},
 "transistor":{
   "generation":{"name":"generation-viii"},
-  "effect_entries":[{"short_effect":"Increases Electric-type moves by ?x."}]},
+  "effect_entries":[{"short_effect":"Increases Electric-type moves by 1.5?x."}]},
 "dragon's_maw":{
   "generation":{"name":"generation-viii"},
-  "effect_entries":[{"short_effect":"Increases Dragon-type moves by ?x."}]},
+  "effect_entries":[{"short_effect":"Increases Dragon-type moves by 1.5?x."}]},
 "chilling_neigh":{
   "generation":{"name":"generation-viii"},
   "effect_entries":[{"short_effect":"A Pokemon with this ability increases its Attack by 1 stage when it knocks out another Pokemon."}]},

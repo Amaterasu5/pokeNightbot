@@ -924,7 +924,7 @@
 "priority":0,
 "pp":10,
 "damage_class":{"name":"special"},
-"effect_entries":[{"short_effect":"Inflicts damage can cause the target to flinch (20%)."}],
+"effect_entries":[{"short_effect":"Inflicts damage to both opponents and can flinch (20%)."}],
 "type":{"name":"dark"}},
 "freezing_glare":{
 "power":90,
