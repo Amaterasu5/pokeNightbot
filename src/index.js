@@ -31,13 +31,13 @@ app.get('/', (req, res) => {
   (async function(){
     let [fixed,finalP,info] = await mainFunctions.displayData(pdata,pdata8,extended);
     if(fixed){
-      if(info.length+finalP.length>384){
-        info=info.substring(0,384-finalP.length);
+      if(info.length+finalP.length>380){
+        info=info.substring(0,380-finalP.length);
       }
       res.send(["Did you mean "+finalP+"? " + info]);
     }else{
-      if(info.length>399){
-        info=info.substring(0,400);
+      if(info.length>398){
+        info=info.substring(0,399);
       }
       res.send([info]);
     }

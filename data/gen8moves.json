@@ -884,7 +884,7 @@
 "priority":0,
 "pp":5,
 "damage_class":{"name":"physical"},
-"effect_entries":[{"short_effect":"Inflicts damage with no secondary effect."}],
+"effect_entries":[{"short_effect":"Inflicts damage to both opponents with no secondary effect."}],
 "type":{"name":"ice"}},
 "astral_barrage":{
 "power":120,
@@ -892,7 +892,7 @@
 "priority":0,
 "pp":5,
 "damage_class":{"name":"special"},
-"effect_entries":[{"short_effect":"Inflicts damage with no secondary effect."}],
+"effect_entries":[{"short_effect":"Inflicts damage to both opponents with no secondary effect."}],
 "type":{"name":"ghost"}},
 "dragon_energy":{
 "power":150,
