@@ -92,7 +92,7 @@ app.get('/calc',(req,res) => {
   if(result){
     res.send([result]);
   }else{
-    res.send("sorry boss idk");
+    res.send(["sorry boss idk"]);
   }
 });
 
@@ -100,21 +100,38 @@ app.get('/evs',(req,res)=>{
   var searchQuery = req.originalUrl.replace(req.path,'');
   let params = new URLSearchParams(searchQuery);
   let rawEVs = params.get('evs').toLowerCase().replace(/ /gi,'');
-  result=evString.vitamins(rawEVs);
+  let result = evString.vitamins(rawEVs);
   res.send([result]);
 });
 
-app.get('/ct',(req,res)=>{
+app.get('/speed',(req,res)=>{
   var searchQuery = req.originalUrl.replace(req.path,'');
   let params = new URLSearchParams(searchQuery);
-  let mon = params.get('mon').toLowerCase();
-  var crownTundra = ['Nidoran-f','Nidorina', 'Nidoqueen', 'Nidoran-m', 'Nidorino', 'Nidoking', 'Zubat', 'Golbat', 'Jynx', 'Electabuzz', 'Magmar', 'Omanyte', 'Omastar', 'Kabuto', 'Kabutops', 'Aerodactyl', 'Articuno', 'Zapdos', 'Moltres', 'Dratini', 'Dragonair', 'Dragonite', 'Crobat', 'Smoochum', 'Elekid', 'Magby', 'Raikou', 'Entei', 'Suicune', 'Lugia', 'Ho-Oh', 'Treecko','Grovyle','Sceptile','Torchic','Combusken','Blaziken','Mudkip','Marshtomp', 'Swampert', 'Aron', 'Lairon', 'Aggron', 'Swablu', 'Altaria', 'Lileep', 'Cradily', 'Anorith', 'Armaldo', 'Absol', 'Spheal', 'Sealeo', 'Walrein', 'Relicanth', 'Bagon', 'Shelgon', 'Salamence', 'Beldum', 'Metang', 'Metagross', 'Regirock', 'Regice', 'Registeel', 'Latias', 'Latios', 'Kyogre', 'Groudon', 'Rayquaza', 'Spiritomb', 'Gible', 'Gabite', 'Garchomp', 'Electivire', 'Magmortar', 'Uxie', 'Mesprit', 'Azelf','Dialga','Palkia', 'Heatran','Regigigas','Giratina','Cresselia', 'Victini', 'Audino', 'Tirtouga', 'Carracosta', 'Archen', 'Archeops', 'Cryogonal', 'Tornadus','Tornadus-therian','Tornadus-incarnate', 'Thundurus','Thundurus-incarnate', 'Thundurus-therian', 'Landorus','Landorus-incarnate','Landorus-therian', 'Genesect', 'Tyrunt', 'Tyrantrum', 'Amaura', 'Aurorus', 'Carbink', 'Xerneas', 'Yveltal', 'Zygarde', 'Diancie', 'Volcanion', 'Tapu-Koko', 'Tapu-Lele', 'Tapu-Bulu', 'Tapu-Fini', 'Nihilego', 'Buzzwole', 'Pheromosa', 'Xurkitree', 'Celesteela', 'Kartana','Guzzlord','Poipole','Naganadel','Stakataka','Blacephalon','Calyrex','Slowking-galar','Regieleki','Regidrago'];
-  crownTundra = crownTundra.map(x=>x.toLowerCase());
-  if(crownTundra.includes(mon)){
-    res.send("Yeah, "+mon+" is new in Crown Tundra");
-  }else{
-    res.send("No, "+mon+" is not gonna be new in Crown Tundra :(");
-  }
+  let pokemon1Data = params.get('mon1').toLowerCase().split(',');
+  let pokemon2Data = params.get('mon2').toLowerCase().split(',');
+  (async function(){
+    const [speed1, speed2] = await mainFunctions.faster(pokemon1Data,pokemon2Data);
+    if(speed1>speed2){
+      res.send([pokemon1Data[0]+" has "+speed1+" speed and is faster than "+pokemon2Data[0]+" at "+speed2+" speed."]);
+    }else if(speed2>speed1){
+      res.send([pokemon2Data[0]+" has "+speed2+" speed and is faster than "+pokemon1Data[0]+" at "+speed1+" speed."]);
+    }else{
+      res.send([pokemon1Data[0]+" and "+pokemon2Data[0]+" are speed tying at "+speed1]);
+    }
+  })();
 });
+
+// app.get('/ct',(req,res)=>{
+//   var searchQuery = req.originalUrl.replace(req.path,'');
+//   let params = new URLSearchParams(searchQuery);
+//   let mon = params.get('mon').toLowerCase();
+//   var crownTundra = ['Nidoran-f','Nidorina', 'Nidoqueen', 'Nidoran-m', 'Nidorino', 'Nidoking', 'Zubat', 'Golbat', 'Jynx', 'Electabuzz', 'Magmar', 'Omanyte', 'Omastar', 'Kabuto', 'Kabutops', 'Aerodactyl', 'Articuno', 'Zapdos', 'Moltres', 'Dratini', 'Dragonair', 'Dragonite', 'Crobat', 'Smoochum', 'Elekid', 'Magby', 'Raikou', 'Entei', 'Suicune', 'Lugia', 'Ho-Oh', 'Treecko','Grovyle','Sceptile','Torchic','Combusken','Blaziken','Mudkip','Marshtomp', 'Swampert', 'Aron', 'Lairon', 'Aggron', 'Swablu', 'Altaria', 'Lileep', 'Cradily', 'Anorith', 'Armaldo', 'Absol', 'Spheal', 'Sealeo', 'Walrein', 'Relicanth', 'Bagon', 'Shelgon', 'Salamence', 'Beldum', 'Metang', 'Metagross', 'Regirock', 'Regice', 'Registeel', 'Latias', 'Latios', 'Kyogre', 'Groudon', 'Rayquaza', 'Spiritomb', 'Gible', 'Gabite', 'Garchomp', 'Electivire', 'Magmortar', 'Uxie', 'Mesprit', 'Azelf','Dialga','Palkia', 'Heatran','Regigigas','Giratina','Cresselia', 'Victini', 'Audino', 'Tirtouga', 'Carracosta', 'Archen', 'Archeops', 'Cryogonal', 'Tornadus','Tornadus-therian','Tornadus-incarnate', 'Thundurus','Thundurus-incarnate', 'Thundurus-therian', 'Landorus','Landorus-incarnate','Landorus-therian', 'Genesect', 'Tyrunt', 'Tyrantrum', 'Amaura', 'Aurorus', 'Carbink', 'Xerneas', 'Yveltal', 'Zygarde', 'Diancie', 'Volcanion', 'Tapu-Koko', 'Tapu-Lele', 'Tapu-Bulu', 'Tapu-Fini', 'Nihilego', 'Buzzwole', 'Pheromosa', 'Xurkitree', 'Celesteela', 'Kartana','Guzzlord','Poipole','Naganadel','Stakataka','Blacephalon','Calyrex','Slowking-galar','Regieleki','Regidrago'];
+//   crownTundra = crownTundra.map(x=>x.toLowerCase());
+//   if(crownTundra.includes(mon)){
+//     res.send("Yeah, "+mon+" is new in Crown Tundra");
+//   }else{
+//     res.send("No, "+mon+" is not gonna be new in Crown Tundra :(");
+//   }
+// });
 
 app.listen(process.env.PORT||5000);

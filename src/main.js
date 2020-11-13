@@ -197,4 +197,81 @@ function displayItem(itemdata,extended){
   return items.join();
 }
 
+function speedOnly(pokedata){
+  return pokedata[5].base_stat;
+}
+
+async function findPokemon(name){
+  let thisPokemon = allPokemon.find(element => element.name == name);
+  let speed;
+  if (galar[name]!=undefined){
+    speed=speedOnly(galar[name].stats);
+  }else if (thisPokemon!=undefined){
+    thisUrl = thisPokemon.url;
+    var promise1 = new Promise((resolve,reject) => {
+      $.ajax({
+        url:thisUrl,
+        dataType:'json',
+        success:function(data){
+          apiData = data.stats;
+          resolve();
+        },
+        error:function(obj,err){
+          reject();
+        }
+      });
+    });
+    promise1.then((res)=>{
+      speed=speedOnly(apiData);
+    }).catch((err)=>{
+      console.log(err);
+    });
+  }
+  await Promise.all([promise1]);
+  return speed;
+}
+
+async function setUpSpeed(pokemon){
+  let name=pokemon[0];
+  let nature=1;
+  let iv=31;
+  let ev=252;
+  let boost=0;
+  let doubled=1;
+  let base = await findPokemon(pokemon[0]);
+  for(let i=1;i<pokemon.length;i++){
+    let current=pokemon[i];
+    if(current=='+'){
+      nature=1.1;
+    }else if(current=='-'){
+      nature=.9;
+    }
+    if(current.includes('iv')){
+      iv=parseInt(current.replace('iv',''),10);
+    }
+    if(current.match(/evs?/g)||current.match(/(?<!\+)[0-9]+/g)){
+      ev=parseInt(current.replace(/evs?/,''),10);
+    }
+    if(current.match(/\+[1-6]/g)){
+      boost=parseInt(current.replace('+',''),10);
+    }
+    if(current=='tw' || current=='tailwind'||current=="swift-swim"||current=="slush-rush"||current=='chlorophyll'||current=="sand-rush"){
+      doubled*=2;
+    }
+  }
+  //before boosts
+  let speed=Math.floor(nature*(5+Math.floor(.5*(2*base+iv+Math.floor(ev/4.0)))));
+  //add boosts
+  if(!boost){
+    return speed*doubled;
+  }
+  return Math.floor(speed*(Math.pow(((2+boost)/2.0),(Math.abs(boost)/boost)))*doubled);
+}
+
+methods.faster = async function(mon1,mon2){
+  speed1 = await setUpSpeed(mon1);
+  speed2 = await setUpSpeed(mon2);
+  return [speed1,speed2];
+}
+
 module.exports = methods;
