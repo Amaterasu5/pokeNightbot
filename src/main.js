@@ -255,7 +255,7 @@ async function setUpSpeed(pokemon){
     if(current.match(/\+[1-6]/g)){
       boost=parseInt(current.replace('+',''),10);
     }else if(current.match(/\-[1-6]/g)){
-      boost=0-parseInt(current.replace('-',''),10);
+      boost=parseInt(current,10);
     }
     if(current=='tw' || current=='tailwind'||current=="swift-swim"||current=="slush-rush"||current=='chlorophyll'||current=="sand-rush"){
       doubled*=2;
@@ -267,7 +267,7 @@ async function setUpSpeed(pokemon){
   if(!boost){
     return speed*doubled;
   }
-  return Math.floor(speed*(Math.pow(((2+boost)/2.0),(Math.abs(boost)/boost)))*doubled);
+  return Math.floor(speed*(Math.pow(((2+Math.abs(boost))/2.0),(Math.abs(boost)/boost)))*doubled);
 }
 
 methods.faster = async function(mon1,mon2){
