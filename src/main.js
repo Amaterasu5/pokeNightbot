@@ -255,7 +255,7 @@ async function setUpSpeed(pokemon){
     if(current.match(/\+[1-6]/g)){
       boost=parseInt(current.replace('+',''),10);
     }else if(current.match(/\-[1-6]/g)){
-      boost=parseInt(current,10);
+      boost=0-parseInt(current.replace('-',''),10);
     }
     if(current=='tw' || current=='tailwind'||current=="swift-swim"||current=="slush-rush"||current=='chlorophyll'||current=="sand-rush"){
       doubled*=2;
