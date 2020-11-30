@@ -24,7 +24,11 @@ methods.vitamins = function(evString){
       evFeathers[i]=evFeathers[i+1]=0;
       break;
     }else if (i==evNumbers.length-1){
-      evVitamins[i]=1+Math.floor(evNumbers[i]/10);
+      if(evNumbers[i]%10==0){
+        evVitamins[i]=evNumbers[i]/10;
+      }else{
+        evVitamins[i]=1+Math.floor(evNumbers[i]/10);
+      }
       evFeathers[i]=0;
       break;
     }
