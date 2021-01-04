@@ -154,6 +154,18 @@ describe('calc', function () {
                 }
             });
         });
+        helper_1.inGens(1, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Struggle vs. Ghost (gen " + gen + ")", function () {
+                var result = calculate(Pokemon('Mew'), Pokemon('Gengar'), Move('Struggle'));
+                if (gen < 2) {
+                    expect(result.range()[1]).toEqual(0);
+                }
+                else {
+                    expect(result.range()[1]).toBeGreaterThan(0);
+                }
+            });
+        });
         helper_1.inGens(3, 8, function (_a) {
             var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
             test("Weather Ball should change type depending on the weather (gen " + gen + ")", function () {
