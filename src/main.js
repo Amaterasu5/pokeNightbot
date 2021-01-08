@@ -204,8 +204,8 @@ function speedOnly(pokedata){
 async function findPokemon(name){
   let thisPokemon = allPokemon.find(element => element.name == name);
   let speed;
-  if (galar[name]!=undefined){
-    speed=speedOnly(galar[name].stats);
+  if (galar[name.replace('-','_')]!=undefined){
+    speed=speedOnly(galar[name.replace('-','_')].stats);
   }else if (thisPokemon!=undefined){
     thisUrl = thisPokemon.url;
     var promise1 = new Promise((resolve,reject) => {
