@@ -18,10 +18,10 @@ methods.vitamins = function(evString){
   evVitamins=[];
   evFeathers=[];
   for (let i=0;i<evNumbers.length;i++){
-    if (i==evNumbers.length-2&&neededFeathers[i]==8){
+    if (i==evNumbers.length-1&&neededFeathers[i]==8){
       evVitamins[i]=1+Math.floor(evNumbers[i]/10);
-      evVitamins[i+1]=1+Math.floor(evNumbers[i+1]/10);
-      evFeathers[i]=evFeathers[i+1]=0;
+      evVitamins[i-1]=1+Math.floor(evNumbers[i-1]/10);
+      evFeathers[i]=evFeathers[i-1]=0;
       break;
     }else if (i==evNumbers.length-1){
       if(evNumbers[i]%10==0){
