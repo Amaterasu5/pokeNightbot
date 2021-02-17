@@ -47,8 +47,8 @@ methods.inputFix = function(pdata,pdata8){
   //urshifu forme fix
   else if(pdata8=='urshifu') pdata8='urshifu_single_strike';
   //calyrex forme fix
-  else if(pdata8=='calyrexice') pdata8='calyrex_ice_rider';
-  else if(pdata8=='calyrexshadow'||pdata8=='calyrex-ghost') pdata8='calyrex_shadow_rider';
+  else if(pdata8=='calyrex_ice') pdata8='calyrex_ice_rider';
+  else if(pdata8=='calyrex_shadow'||pdata8=='calyrex_ghost') pdata8='calyrex_shadow_rider';
   return [pdata,pdata8];
 }
 module.exports = methods;
