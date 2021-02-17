@@ -42,12 +42,12 @@ methods.doesItLearn = function(pokemon, move, gen){
 }
 
 methods.doesPokemonMoveExist = function(pokemon, move){
-  if (pokemon=='urshifu') {pokemon='urshifusinglestrike'};
-  if (move=='urshifu') {move='urshifusinglestrike'};
-  if (pokemon=='calyrex-ice-rider') {pokemon='calyrexice'};
-  if (move=='calyrex-ice-rider') {move='calyrexice'};
-  if (pokemon=='calyrex-shadow-rider') {pokemon='calyrexshadow'};
-  if (move=='calyrex-shadow-rider') {move='calyrexshadow'};
+  if (pokemon=='urshifu') {pokemon='urshifusinglestrike';}
+  if (move=='urshifu') {move='urshifusinglestrike';}
+  if (pokemon=='calyrex-ice-rider') {pokemon='calyrexice';}
+  if (move=='calyrex-ice-rider') {move='calyrexice';}
+  if (pokemon=='calyrex-shadow-rider') {pokemon='calyrexshadow';}
+  if (move=='calyrex-shadow-rider') {move='calyrexshadow';}
   let returnPokemon = learnsets[pokemon]!=undefined? pokemon : null;
   if(!returnPokemon){
     for (const item of allPokemon){
