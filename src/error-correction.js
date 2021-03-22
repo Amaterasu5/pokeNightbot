@@ -44,7 +44,11 @@ methods.inputFix = function(pdata,pdata8){
   else if(pdata8.substring(0,8).includes('galar')){
     pdata8=pdata8.replace(/(?:galar)(?:ian)?_/gi,'').concat('_galar');
   }
-  //urshifu forme fix
+  //incarnate forme default
+  else if(pdata=='thundurus') pdata='thundurus-incarnate';
+  else if(pdata=='tornadus') pdata='tornadus-incarnate';
+  else if(pdata=='landorus') pdata='landorus-incarnate';
+  //urshifu forme default
   else if(pdata8=='urshifu') pdata8='urshifu_single_strike';
   //calyrex forme fix
   else if(pdata8=='calyrex_ice') pdata8='calyrex_ice_rider';
