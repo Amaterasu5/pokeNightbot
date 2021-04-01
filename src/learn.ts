@@ -42,8 +42,8 @@ methods.doesItLearn = function(pokemon, move, gen){
 }
 
 methods.doesPokemonMoveExist = function(pokemon, move){
-  if (pokemon=='urshifu') pokemon='urshifusinglestrike';
-  if (move=='urshifu') move='urshifusinglestrike';
+  if (pokemon=='urshifusinglestrike') pokemon='urshifu';
+  if (move=='urshifusinglestrike') move='urshifu';
   if (pokemon=='calyrexicerider') pokemon='calyrexice';
   if (move=='calyrexicerider') move='calyrexice';
   if (pokemon=='calyrexshadowrider') pokemon='calyrexshadow';
