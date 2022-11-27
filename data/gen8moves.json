@@ -1204,7 +1204,7 @@
     "priority":0,
     "pp":5,
     "damage_class":{"name":"special"},
-    "effect_entries":[{"short_effect":"Inflicts damage to the target and lowers the user's spatk. Money is earned after the battle."}],
+    "effect_entries":[{"short_effect":"Inflicts damage to both opponents and lowers the user's spatk. Money is earned after the battle."}],
     "type":{"name":"steel"}},
 "ruination":{
     "power":null,
