@@ -19498,7 +19498,6 @@ const BattleLearnsets = {
 			confide: ["7M", "6M"],
 			conversion2: ["8L25", "7L1", "6L1", "5L1", "4L1"],
 			conversion: ["8L1", "7L1", "6L1", "5L1", "4L1"],
-			conversion2: ["8L25", "7L1", "6L1", "5L1", "4L1"],
 			darkpulse: ["8M", "7M", "6M", "5T", "4M"],
 			defensecurl: ["8L1"],
 			discharge: ["8L40", "7L40", "6L40", "5L40", "4L40"],
