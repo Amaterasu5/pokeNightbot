@@ -252,5 +252,14 @@
   "effect_entries":[{"short_effect":"Boosts the Pokémon's Attack 1 stage if Tailwind takes effect or if the Pokémon is hit by a wind move. The Pokémon also takes no damage from wind moves."}]},
 "zero_to_hero":{
   "generation":{"name":"generation-ix"},
-  "effect_entries":[{"short_effect":"The Pokémon transforms into its Hero Form when it switches out."}]}
+  "effect_entries":[{"short_effect":"The Pokémon transforms into its Hero Form when it switches out."}]},
+"protean":{
+    "generation":{"name":"generation-vi"},
+    "effect_entries":[{"short_effect":"A pokemon with this ability changes type to match the first attack they're about to use."}]},
+"battle-bond":{
+    "generation":{"name":"generation-vii"},
+    "effect_entries":[{"short_effect":"Raises atk, spatk, and speed for a turn after knocking out an opponent."}]},
+"snow-warning":{
+    "generation":{"name":"generation-iv"},
+    "effect_entries":[{"short_effect":"Summons a snowstorm when the Pokemon is sent into battle, raising the def of ice-type Pokemon."}]}
 }
