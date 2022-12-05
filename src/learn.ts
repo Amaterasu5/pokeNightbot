@@ -14,8 +14,8 @@ methods.doesItLearn = function(pokemon, move, gen){
     if(babyLearnedGens!=undefined){
       if(gen=='any'){
         return true;
-      }else if(gen=='8'){
-        if(babyLearnedGens[0].charAt(0)=='8'&&babyLearnedGens[0].charAt(1)!='V'){
+      }else if(gen=='9'){
+        if(babyLearnedGens[0].charAt(0)=='9'&&babyLearnedGens[0].charAt(1)!='V'){
           return true;
         }
       }else{
@@ -29,8 +29,8 @@ methods.doesItLearn = function(pokemon, move, gen){
   if (learnedGens==undefined){return false;}
   if(gen=='any'){
     return true;
-  }else if(gen=='8'){
-    if (learnedGens[0].charAt(0)=='8'&&learnedGens[0].charAt(1)!='V'){
+  }else if(gen=='9'){
+    if (learnedGens[0].charAt(0)=='9'&&learnedGens[0].charAt(1)!='V'){
       return true;
     }
   }else{
