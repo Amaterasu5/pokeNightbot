@@ -1156,7 +1156,7 @@
     "priority":0,
     "pp":10,
     "damage_class":{"name":"status"},
-    "effect_entries":[{"short_effect":"Cuts the user's HP by 25% to sharply boost its attack, spatk, and speed."}],
+    "effect_entries":[{"short_effect":"Cuts the user's HP by 50% to sharply boost its attack, spatk, and speed."}],
     "type":{"name":"normal"}},
 "kowtow_cleave":{
     "power":85,
