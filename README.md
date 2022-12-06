@@ -20,9 +20,10 @@ pokeNightbot is a lightweight project to add fetching functionality of certain P
 >**Pokemon and moves with multiple words must be separated by dashes**.
 
 For example:
-**!learn conkeldurr close-combat 8**
-will return "Yes, conkeldurr can learn close combat in gen 8." whereas
-**!learn meowscarada aqua-jet**
+- **!learn conkeldurr close-combat 8**
+will return "Yes, conkeldurr can learn close combat in gen 8." 
+whereas
+- **!learn meowscarada aqua-jet**
 will return "No, meowscarada cannot learn aqua jet in gen 9."
 
 #### !calc [attacker] [defender] [move] [field]
