@@ -13,16 +13,17 @@ pokeNightbot is a lightweight project to add fetching functionality of certain P
 - **!data [ability]** shows the *generation where the ability was originally introduced* as well as a *short description of the ability*.
 - **!data [item]** will just display a *short description of the item*.
 
-#### !learn [pokemon] [move]
->The **!learn** command checks to see whether the pokemon can learn the specified move **in generation 8**. This is useful for competitions and the ranked ladder, as pokemon are only allowed to have moves that can be learned in this current generation.
->Pokemon not currently allowed in galar will not have any learnable moves.
+#### !learn [pokemon] [move] [gen(optional)]
+>The **!learn** command checks to see whether a pokemon can learn a specified move given a specified generation. This is useful for competitions and the ranked ladder, as pokemon are only allowed to have moves that can be learned in this current generation.
+>Pokemon not currently allowed in paldea will not have any learnable moves in gen 9.
+>[pokemon] and [move] are interchangeable, and gen is an optional parameter that defaults to 9 if empty.
 >**Pokemon and moves with multiple words must be separated by dashes**.
 
 For example:
-**!learn conkeldurr close-combat**
-will return "Yes, conkeldurr can learn close combat in galar." whereas
-**!learn urshifu-single-strike aqua-jet**
-will return "No, urshifu singe strike cannot learn aqua jet in galar."
+**!learn conkeldurr close-combat 8**
+will return "Yes, conkeldurr can learn close combat in gen 8." whereas
+**!learn meowscarada aqua-jet**
+will return "No, meowscarada cannot learn aqua jet in gen 9."
 
 #### !calc [attacker] [defender] [move] [field]
 >Using [Pokemon Showdown's damage calc](https://calc.pokemonshowdown.com/), this command can calculate how much damage a pokemon will do to another based on its current stats, items, choice of move, and field effects. This information is usually presented as a range of percentage damage done that would be done to the defender at maximum HP.
