@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
   var searchQuery = req.originalUrl.replace(req.path,'');
   let params = new URLSearchParams(searchQuery);
   let pdata = params.get('data').toLowerCase();
+  if (!pdata){res.redirect('/index');}
   let pdata8 = pdata.replace(/-/gi,'_');
   let extended = params.get('extended')? params.get('extended').includes('extra'):false;
   (async function(){
