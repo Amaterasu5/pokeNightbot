@@ -256,38 +256,38 @@
   "effect_entries":[{"short_effect":"Increases special defense by 2 stages when used in battle."}]},
 "x_speed":{
   "effect_entries":[{"short_effect":"Increases speed by 2 stages when used in battle."}]},
-"tera orb":{
+"tera_orb":{
   "effect_entries":[{"short_effect":"An orb that holds within it the power to crystallize. When it is charged with energy, it can be used to cause Pokémon to Terastallize."}]},
-"scarlet book":{
+"scarlet_book":{
   "effect_entries":[{"short_effect":"A record of the expedition that the author, Heath, went on within the Great Crater of Paldea. The book has the name 'Sada' written on it in clumsy handwriting."}]},
-"violet book":{
+"violet_book":{
   "effect_entries":[{"short_effect":"A record of the expedition that the author, Heath, went on within the Great Crater of Paldea. The book has the name 'Turo' written on it in clumsy handwriting."}]},
-"tiny bamboo shoot":{
+"tiny_bamboo_shoot":{
   "effect_entries":[{"short_effect":"A small and rare bamboo shoot. It's quite popular with a certain class of gourmands."}]},
-"big bamboo shoot":{
+"big_bamboo_shoot":{
   "effect_entries":[{"short_effect":"A large and rare bamboo shoot. It's extremely popular with a certain class of gourmands."}]},
-"scroll of darkness":{
+"scroll_of_darkness":{
   "effect_entries":[{"short_effect":"A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of darkness."}]},
-"scroll of waters":{
+"scroll_of_waters":{
   "effect_entries":[{"short_effect":"A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of water."}]},
-"auspicious armor":{
+"auspicious_armor":{
   "effect_entries":[{"short_effect":"A peculiar set of armor that can make a certain species of Pokémon evolve. Auspicious wishes live within it."}]},
-"leader's crest":{
+"leader's_crest":{
   "effect_entries":[{"short_effect":"A shard of what appears to be an old blade of some sort. It is held only by Bisharp that head up a group of Pawniard."}]},
-"malicious armor":{
+"malicious_armor":{
   "effect_entries":[{"short_effect":"A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it."}]},
-"booster energy":{
+"booster_energy":{
   "effect_entries":[{"short_effect":"Boosts the highest stat of a Pokémon with the ability Protosynthesis or Quark Drive."}]},
-"ability shield":{
+"ability_shield":{
   "effect_entries":[{"short_effect":"Protects the holder from having its Ability changed by others."}]},
-"clear amulet":{
+"clear_amulet":{
   "effect_entries":[{"short_effect":"Protects the holder from having its stats lowered by moves used against it or by other Pokémon's Abilities."}]},
-"mirror herb":{
+"mirror_herb":{
   "effect_entries":[{"short_effect":"Allows the holder to mirror an opponent's stat increases to boost its own stats—but only once."}]},
-"punching glove":{
+"punching_glove":{
   "effect_entries":[{"short_effect":"Boosts the power of the holder's punching moves by 1.1x and prevents direct contact with targets."}]},
-"covert cloak":{
+"covert_cloak":{
   "effect_entries":[{"short_effect":"Protects the holder from the additional effects of moves."}]},
-"loaded dice":{
+"loaded_dice":{
   "effect_entries":[{"short_effect":"Ensures that the holder's multistrike moves hit more times."}]}
 }
