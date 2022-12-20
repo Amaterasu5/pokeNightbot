@@ -1358,6 +1358,14 @@
     "damage_class":{"name":"physical"},
     "effect_entries":[{"short_effect":"Inflicts damage to the target. This move has a high critical hit ratio."}],
     "type":{"name":"water"}},
+"wave_crash":{
+    "power":120,
+    "accuracy":100,
+    "priority":0,
+    "pp":10,
+    "damage_class":{"name":"physical"},
+    "effect_entries":[{"short_effect":"Inflicts damage to the target and causes 1/3 recoil damage."}],
+    "type":{"name":"water"}},
 "blazing_torque":{
     "power":80,
     "accuracy":100,
