@@ -1191,7 +1191,7 @@
             {"base_stat":85,"effort":0,"stat":{"name":"special-defense"}},
             {"base_stat":82,"effort":0,"stat":{"name":"speed"}}]},
 "squawkabilly": {
-    "abilities":[{"ability":{"name":"intimidate"}},{"ability":{"name":"hustle"}},{"ability":{"name":"guts"}}],
+    "abilities":[{"ability":{"name":"intimidate"}},{"ability":{"name":"hustle"}},{"ability":{"name":"guts"}},{"ability":{"name":"sheer-force"}}],
     "stats":[{"base_stat":82,"effort":1,"stat":{"name":"hp"}},
             {"base_stat":96,"effort":0,"stat":{"name":"attack"}},
             {"base_stat":51,"effort":0,"stat":{"name":"defense"}},
