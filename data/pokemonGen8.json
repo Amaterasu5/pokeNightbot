@@ -1589,5 +1589,13 @@
             {"base_stat":80,"effort":0,"stat":{"name":"defense"}},
             {"base_stat":50,"effort":0,"stat":{"name":"special-attack"}},
             {"base_stat":90,"effort":0,"stat":{"name":"special-defense"}},
-            {"base_stat":90,"effort":0,"stat":{"name":"speed"}}]}
+            {"base_stat":90,"effort":0,"stat":{"name":"speed"}}]},
+"tauros_paldea": {
+    "abilities":[{"ability":{"name":"intimidate"}},{"ability":{"name":"anger-point"}},{"ability":{"name":"cud-chew"}}],
+    "stats":[{"base_stat":75,"effort":1,"stat":{"name":"hp"}},
+            {"base_stat":110,"effort":0,"stat":{"name":"attack"}},
+            {"base_stat":105,"effort":0,"stat":{"name":"defense"}},
+            {"base_stat":30,"effort":0,"stat":{"name":"special-attack"}},
+            {"base_stat":70,"effort":0,"stat":{"name":"special-defense"}},
+            {"base_stat":100,"effort":0,"stat":{"name":"speed"}}]}
 }
